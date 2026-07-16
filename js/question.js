@@ -1,3 +1,5 @@
+const progressBar=document.getElementById("progressBar");
+
 let currentQuestion = Number(localStorage.getItem("currentQuestion")) || 0;
 let totalScore = Number(localStorage.getItem("totalScore")) || 0;
 let userAnswers = JSON.parse(localStorage.getItem("userAnswers")) || [];
@@ -24,10 +26,15 @@ function renderQuestion() {
 
     const q = questions[currentQuestion];
 
+    progressBar.style.width=
+    ((currentQuestion+1)/questions.length)*100+"%";
+
     if (!q) {
         location.href = "result.html";
         return;
     }
+
+    document.getElementById("category").textContent = q.category;
 
     questionTitle.textContent = q.question;
 
@@ -44,6 +51,16 @@ function renderQuestion() {
     }
 
     answers.innerHTML = "";
+
+    if(q.answers.length >= 7){
+
+        answers.style.gridTemplateColumns = "1fr 1fr";
+
+    }else{
+
+        answers.style.gridTemplateColumns = "1fr";
+
+    }
 
     q.answers.forEach((answer, index) => {
 
