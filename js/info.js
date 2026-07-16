@@ -1,5 +1,28 @@
 let phoneVerified = false;
 
+// 전화번호 자동 하이픈
+document.getElementById("phone").addEventListener("input", function () {
+
+    let value = this.value.replace(/\D/g, "");
+
+    if (value.length > 11) value = value.slice(0, 11);
+
+    if (value.length < 4) {
+
+        this.value = value;
+
+    } else if (value.length < 8) {
+
+        this.value = value.replace(/(\d{3})(\d+)/, "$1-$2");
+
+    } else {
+
+        this.value = value.replace(/(\d{3})(\d{4})(\d+)/, "$1-$2-$3");
+
+    }
+
+});
+
 // 인증번호 받기
 document.getElementById("sendCode").onclick = function () {
 
@@ -31,7 +54,12 @@ document.getElementById("next").onclick = function () {
 
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
-    const birth = document.getElementById("birth").value;
+    const birthYear = document.getElementById("birthYear").value;
+    const birthMonth = document.getElementById("birthMonth").value;
+    const birthDay = document.getElementById("birthDay").value;
+
+    const birth = `${birthYear}-${birthMonth.padStart(2,"0")}-${birthDay.padStart(2,"0")}`;
+
     const region = document.getElementById("region").value;
 
     if (name === "") {
@@ -49,10 +77,14 @@ document.getElementById("next").onclick = function () {
         return;
     }
 
-    if (birth === "") {
-        alert("생년월일을 입력해주세요.");
-        return;
-    }
+   if (
+    birthYear === "" ||
+    birthMonth === "" ||
+    birthDay === ""
+) {
+    alert("생년월일을 입력해주세요.");
+    return;
+}
 
     // 참가자 정보 저장
     localStorage.setItem("name", name);
@@ -90,3 +122,30 @@ document.getElementById("next").onclick = function () {
     }
 
 };
+
+// 프로필 사진 미리보기
+const photoInput = document.getElementById("photo");
+
+photoInput.addEventListener("change", function () {
+
+    const file = this.files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+
+        const preview = document.getElementById("photoPreview");
+
+        preview.style.backgroundImage = `url(${e.target.result})`;
+        preview.style.backgroundSize = "cover";
+        preview.style.backgroundPosition = "center";
+
+        preview.innerHTML = "";
+
+    };
+
+    reader.readAsDataURL(file);
+
+});

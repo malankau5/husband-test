@@ -1,64 +1,131 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인정보 입력</title>
+
+    <title>참가자 정보 입력</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <h1>참가자 정보 입력</h1>
+    <h1>참가자 정보</h1>
 
     <p class="sub">
-        모든 항목을 입력해주세요.
+        아래 정보를 입력해주세요.
     </p>
 
-    <input type="file" id="photo" accept="image/*">
+    <!-- 프로필 -->
 
-    <br><br>
+    <label class="input-title">프로필 사진</label>
+
+    <label class="photo-upload">
+
+        <input
+            type="file"
+            id="photo"
+            accept="image/*"
+            hidden
+        >
+
+        <div class="photo-circle" id="photoPreview">
+
+            <span>
+                프로필 사진을<br>
+                선택해 주세요.
+            </span>
+
+        </div>
+
+    </label>
+
+    <!-- 이름 -->
+
+    <label class="input-title">이름</label>
 
     <input
         type="text"
-        placeholder="이름"
         id="name"
+        placeholder="이름을 입력하세요"
     >
 
-    <br><br>
+    <!-- 전화번호 -->
 
-    <input
-        type="text"
-        placeholder="전화번호 (01012345678)"
-        id="phone"
-    >
+    <label class="input-title">전화번호</label>
 
-    <button id="sendCode">
-        인증번호 받기
-    </button>
+    <div class="input-row">
 
-    <br><br>
+        <input
+            type="tel"
+            id="phone"
+            placeholder="010-1234-5678"
+        >
 
-    <input
-        type="text"
-        placeholder="인증번호 입력"
-        id="code"
-    >
+        <button
+            id="sendCode"
+            class="side-btn"
+        >
+            받기
+        </button>
 
-    <button id="checkCode">
-        인증 확인
-    </button>
+    </div>
 
-    <br><br>
+    <!-- 인증번호 -->
 
-    <input
-        type="date"
-        id="birth"
-    >
+    <label class="input-title">인증번호</label>
 
-    <br><br>
+    <div class="input-row">
+
+        <input
+            type="text"
+            id="code"
+            placeholder="인증번호"
+        >
+
+        <button
+            id="checkCode"
+            class="side-btn"
+        >
+            확인
+        </button>
+
+    </div>
+
+    <!-- 생년월일 -->
+
+    <label class="input-title">생년월일</label>
+
+    <div class="birth-row">
+
+        <input
+            type="number"
+            id="birthYear"
+            placeholder="YYYY"
+        >
+
+        <input
+            type="number"
+            id="birthMonth"
+            placeholder="MM"
+        >
+
+        <input
+            type="number"
+            id="birthDay"
+            placeholder="DD"
+        >
+
+    </div>
+
+    <!-- 지역 -->
+
+    <label class="input-title">지역</label>
 
     <select id="region">
 
@@ -76,9 +143,10 @@
 
     </select>
 
-    <br><br>
-
-    <button id="next">
+    <button
+        id="next"
+        class="main-btn"
+    >
         다음
     </button>
 
