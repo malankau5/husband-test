@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보 입력</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>참가자 정보 입력</h1>
+
+    <p class="sub">
+        모든 항목을 입력해주세요.
+    </p>
+
+    <input type="file" id="photo" accept="image/*">
+
+    <br><br>
+
+    <input
+        type="text"
+        placeholder="이름"
+        id="name"
+    >
+
+    <br><br>
+
+    <input
+        type="text"
+        placeholder="전화번호 (01012345678)"
+        id="phone"
+    >
+
+    <button id="sendCode">
+        인증번호 받기
+    </button>
+
+    <br><br>
+
+    <input
+        type="text"
+        placeholder="인증번호 입력"
+        id="code"
+    >
+
+    <button id="checkCode">
+        인증 확인
+    </button>
+
+    <br><br>
+
+    <input
+        type="date"
+        id="birth"
+    >
+
+    <br><br>
+
+    <select id="region">
+
+        <option>서울</option>
+        <option>경기</option>
+        <option>인천</option>
+        <option>강원</option>
+        <option>충북</option>
+        <option>충남</option>
+        <option>전북</option>
+        <option>전남</option>
+        <option>경북</option>
+        <option>경남</option>
+        <option>제주</option>
+
+    </select>
+
+    <br><br>
+
+    <button id="next">
+        다음
+    </button>
+
+</div>
+
+<script src="js/info.js"></script>
+
+</body>
+</html>

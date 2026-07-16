@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>관리자 페이지</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+.container{
+    max-width:1200px;
+}
+
+.search-box{
+    margin:20px 0;
+}
+
+.search-box input{
+    width:300px;
+    padding:10px;
+    font-size:16px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th, td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:#ff4d88;
+    color:white;
+}
+
+.photo{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>관리자 페이지</h1>
+
+<div class="search-box">
+
+<input
+    type="text"
+    id="search"
+    placeholder="이름 또는 전화번호 검색">
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>사진</th>
+<th>이름</th>
+<th>전화번호</th>
+<th>생년월일</th>
+<th>지역</th>
+<th>점수</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tbody">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
