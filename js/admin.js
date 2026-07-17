@@ -15,6 +15,8 @@ fetch("/api/participants/admin")
         renderUserList(users);
 
         if (users.length > 0) {
+            selectedId = users[0].id;
+            renderUserList(users);
             showUser(users[0]);
         }
 
