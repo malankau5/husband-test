@@ -51,20 +51,21 @@ router.post("/", (req, res) => {
     } = req.body;
 
     const sql = `
-        INSERT INTO participants
-        (name, phone, birth, region, photo, percent)
-        VALUES (?, ?, ?, ?, ?, ?)
+        IINSERT INTO participants
+        (name, phone, birth, region, photo, percent, answers)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
 
     db.query(
         sql,
         [
-            name,
-            phone,
-            birth,
-            region,
-            photo,
-            percent
+        name,
+        phone,
+        birth,
+        region,
+        photo,
+        percent,
+        JSON.stringify(answers)
         ],
         (err, result) => {
 
@@ -160,6 +161,42 @@ router.get("/ranking/:name", (req, res) => {
                 total: results.length
 
             });
+
+        }
+    );
+
+});
+
+router.get("/admin", (req, res) => {
+
+    db.query(
+        `
+        SELECT
+            id,
+            name,
+            phone,
+            birth,
+            region,
+            photo,
+            percent,
+            answers,
+            created_at
+        FROM participants
+        ORDER BY created_at DESC
+        `,
+        (err, results) => {
+
+            if (err) {
+
+                console.error(err);
+
+                return res.status(500).json({
+                    success: false
+                });
+
+            }
+
+            res.json(results);
 
         }
     );

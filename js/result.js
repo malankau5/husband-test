@@ -135,21 +135,18 @@ fetch("/api/participants", {
         "Content-Type": "application/json"
     },
 
-    body: JSON.stringify({
+body: JSON.stringify({
 
-        name: localStorage.getItem("name"),
+    name: localStorage.getItem("name"),
+    phone: localStorage.getItem("phone"),
+    birth: localStorage.getItem("birth"),
+    region: localStorage.getItem("region"),
+    photo: localStorage.getItem("photo"),
+    percent: percent,
 
-        phone: localStorage.getItem("phone"),
+    answers: JSON.parse(localStorage.getItem("userAnswers") || "[]")
 
-        birth: localStorage.getItem("birth"),
-
-        region: localStorage.getItem("region"),
-
-        photo: localStorage.getItem("photo"),
-
-        percent: percent
-
-    })
+})
 
 })
 .then(res => {

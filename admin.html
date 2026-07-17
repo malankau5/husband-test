@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .admin-container{
+            display:grid;
+            grid-template-columns:350px 1fr;
+            gap:30px;
+            max-width:1400px;
+            margin:auto;
+            padding:30px;
+        }
+
+        .user-list{
+            background:#fff;
+            border-radius:20px;
+            padding:20px;
+            overflow-y:auto;
+            max-height:85vh;
+        }
+
+        .user-card{
+            display:flex;
+            align-items:center;
+            gap:15px;
+            padding:12px;
+            border-radius:15px;
+            cursor:pointer;
+            transition:.2s;
+            margin-bottom:10px;
+        }
+
+        .user-card:hover{
+            background:#f5f5f5;
+        }
+
+        .user-photo{
+            width:65px;
+            height:65px;
+            border-radius:50%;
+            object-fit:cover;
+        }
+
+        .detail{
+            background:#fff;
+            border-radius:20px;
+            padding:30px;
+        }
+
+        .detail img{
+            width:180px;
+            border-radius:20px;
+            margin-bottom:20px;
+        }
+
+        .answer{
+            padding:10px;
+            border-bottom:1px solid #eee;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <div class="user-list" id="userList"></div>
+
+    <div class="detail" id="detail">
+
+        <h2>참가자를 선택하세요.</h2>
+
+    </div>
+
+</div>
+
+<script src="js/questions.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>
