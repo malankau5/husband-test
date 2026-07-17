@@ -117,13 +117,11 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "온 몸이 마르고 연약해보인다", score: 14 },
-        { text: "슬렌더 스타일이며 잔근육을 가졌다", score: 86 },
+        { text: "마르고 연약해보인다", score: 40 },
+        { text: "슬렌더 스타일의 잔근육을 가졌다", score: 80 },
         { text: "몸이 탄탄하고 근육질이다", score: 100 },
-        { text: "보디빌더 수준의 근육몬이다", score: 57 },
-        { text: "평범하다", score: 71 },
-        { text: "평범한데 배가 조금 나왔다", score: 43 },
-        { text: "통통하고 동글동글하다", score: 29 },
+        { text: "평범하다", score: 60 },
+        { text: "배만 조금 나왔다", score: 20 },
         { text: "뚱뚱하고 여유증이 있다", score: 0 }
     ]
 },
@@ -131,25 +129,24 @@ const questions = [
 {
     category: "외모",
 
-    question: "8. 당신의 헤어스타일은 무엇입니까?",
+    question: "8. 당신은 어떤 헤어스타일입니까?",
 
     image: "",
 
     answers: [
-        { text: "장발 / 울프컷 / 레이어드컷", score: 83 },
-        { text: "투블럭 / 크롭컷 / 대머리", score: 0 },
-        { text: "쉐도우펌 / 베이비펌 / 히피펌", score: 50 },
-        { text: "애즈펌 / 가르마펌 / 리프컷", score: 67 },
-        { text: "가일컷 / 드롭컷 / 아이비리그컷", score: 33 },
-        { text: "시스루컷 + 직모 / 다운펌", score: 100 },
-        { text: "대충 동네 미용실에 가서 아무거나 한다", score: 17 }
+        { text: "장발 / 울프컷 / 레이어드컷", score: 60 },
+        { text: "투블럭 / 대머리 / 더벅머리", score: 0 },
+        { text: "쉐도우펌 / 베이비펌 / 히피펌", score: 40 },
+        { text: "애즈펌 / 가르마펌 / 리프컷", score: 80 },
+        { text: "가일컷 / 드롭컷 / 아이비리그컷", score: 20 },
+        { text: "시스루컷 + 직모 / 다운펌", score: 100 }
     ]
 },
 
 {
     category: "외모",
 
-    question: "9. 당신과 가장 적합한 것은 무엇입니까?",
+    question: "9. 당신이 가장 자신있는 것은 무엇입니까?",
 
     image: "",
 
@@ -188,6 +185,8 @@ const questions = [
 
     image: "",
 
+    twoColumn: true,
+
     answers: [
         { text: "INFP/ENFP", score: 100 },
         { text: "INTJ/ENTJ", score: 57 },
@@ -211,10 +210,10 @@ const questions = [
 
     answers: [
         { text: "어쩔 수 없지. 가격도 똑같고 배고프니깐 그냥 먹자.", score: 80 },
-        { text: "미친 거 아니야? 가게 다 때려부숴버려. 내가 오늘 누구 하나 담근다.", score: 40 },
-        { text: "사장님... 여기 음식이.... 아.. 예정아 그냥 먹자....ㅜㅠ", score: 0 },
-        { text: "저기요. 여기 이거 환불해주세요. 예정아 우리 그냥 다른 곳 가서 먹자.", score: 20 },
-        { text: "사장님~ 여기 음식이 잘못 나왔는데 다시 주시겠어요?", score: 100 },
+        { text: "미친 거 아니야? 가게 다 때려부숴버려!!!", score: 40 },
+        { text: "사장님... 여기 음식이.... 아.. 예정아 그냥 먹자...ㅜㅠ", score: 0 },
+        { text: "저기요. 이거 환불해주세요. 예정아 우리 그냥 다른 곳 가서 먹자.", score: 20 },
+        { text: "사장님~ 여기 음식이 잘못 나왔는데 다시 주시겠어요? ㅎㅎ", score: 100 },
         { text: "아까 예정이가 고른 거 다시 시키자! 내가 2개 먹을게!!!", score: 60 }
 
     ]
@@ -240,12 +239,12 @@ const questions = [
 {
     category: "성격",
 
-    question: "14. 당신은 얼마나 잘 웁니까?",
+    question: "14. 당신은 얼마나 자주 웁니까?",
 
     image: "",
 
     answers: [
-        { text: "슬픈 것을 보면 눈물이 줄줄 난다", score: 100 },
+        { text: "슬픈 것을 보면 눈물이 줄줄 흐른다", score: 100 },
         { text: "가끔씩 슬픈 일이 있을 때 운다", score: 67 },
         { text: "잘 울지 않는 편이다", score: 0 },
         { text: "사나이는 울지 않는다", score: 33 }
@@ -276,12 +275,10 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "나는 나고 너는 너. 귀찮게 하지 말고 꺼져.", score: 0 },
-        { text: "맞장구는 쳐주고 있지만 나는 잘 이해하지 못하겠네...", score: 25 },
-        { text: "머리로 이해는 해. 근데 공감은 안돼.", score: 75 },
-        { text: "나도 그런 적 있어서 잘 알지. 속상했겠다.", score: 50 },
-        { text: "헐 어떡해 너무 슬퍼... 내 마음이 막 찢어져 ㅜㅠ", score: 100 }
-    ]
+        { text: "나는 나고 너는 너. 귀찮게 하지 말고 꺼져", score: 0 },
+        { text: "맞장구는 쳐주지만 이해는 잘 못하겠다", score: 33 },
+        { text: "머리로 이해하지만 공감은 잘 안 된다", score: 67 },
+        { text: "나의 경험을 바탕으로 하여 공감을 잘 한다", score: 100 }    ]
 },
 
 {
@@ -292,13 +289,12 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "연락이 먼저 올 때까지 생각을 정리하며 기다린다", score: 50 },
-        { text: "애교로 유예정의 화를 푼다", score: 83 },
+        { text: "연락이 먼저 올 때까지 생각을 정리하며 기다린다", score: 60 },
+        { text: "깜찍하고 발랄한 애교로 유예정의 화를 푼다", score: 80 },
         { text: "자신의 생각과 감정, 당시 상황을 솔직하게 말하고 진지하게 사과한다", score: 100 },
-        { text: "미안하다고 화가 풀릴 때까지 사과하며 매달린다", score: 33 },
-        { text: "가슴 만질래...?", score: 67 },
-        { text: "아무일도 없었던 것처럼 친근하게 다가간다", score: 17 },
-        { text: "에라 모르겠다! 친구들과 게임 한 판 한다", score: 0 }
+        { text: "미안하다고 화가 풀릴 때까지 싹싹 빌며 매달린다", score: 40 },
+        { text: "아무일도 없었던 것처럼 친근하게 다가간다", score: 20 },
+        { text: "에라 모르겠다! 친구들과 게임 한 판 하러 한다", score: 0 }
     ]
 },
 
@@ -312,22 +308,23 @@ const questions = [
     answers: [
         { text: "애교가 왕왕 넘치는 귀욤 깜찍 발랄 큐티 사랑둥이다", score: 67 },
         { text: "여자친구한테는 애교가 넘치지만 밖에선 상남자다", score: 100 },
-        { text: "애교는 부끄럽지만 그래도 조금은 한다", score: 33 },
-        { text: "남자가 애교? 꼬추 떼라", score: 0 }
+        { text: "애교는 부끄럽지만 그래도 조금은 가능하다", score: 33 },
+        { text: "남자가 애교? 헛소리하지 마라", score: 0 }
     ]
 },
 
 {
     category: "성격",
 
+    question: "19. 당신은 몇 가지가 해당합니까?",
+
     description:
     "1. 바람을 피운 적이 있다\n\
-     2. 게임을 할 때나 친구를 만날 때 욕설을 사용한다\n\
+     2. 화가나면 욕설이나 은어를 사용한다\n\
      3. 주변에 쓰레기통이 없으면 길바닥에 쓰레기를 버린다\n\
      4. 무단횡단을 5번 이상 해본 적이 있다\n\
-     5. 사람을 때리거나 몸싸움을 한 적이 있다\n\
-     6. 어른, 아이, 동물, 직원 등 약자를 막 대하는 편이다\n\
-     7. 디시, 일베, 펨코, 루리웹 등의 커뮤니티를 자주 이용한다",
+     5. 사람을 때리거나 몸싸움을 해본 적이 있다\n\
+     6. 노인, 아이, 동물, 직원 등 약자에게 막 대하는 편이다",
 
     image: "",
 
@@ -335,7 +332,7 @@ const questions = [
         { text: "없음", score: 100 },
         { text: "1~2가지", score: 67 },
         { text: "3~4가지", score: 33 },
-        { text: "5가지 이상", score: 0 }
+        { text: "5~6가지", score: 0 }
     ]
 },
 
@@ -362,6 +359,8 @@ const questions = [
 
     image: "",
 
+    twoColumn: true,
+
     answers: [
         { text: "꿈", score: 29 },
         { text: "돈", score: 86 },
@@ -377,14 +376,14 @@ const questions = [
 {
     category: "가치관",
 
-    question: "22. 당신이 직업을 선택할 때 가장 중요하게 생각하는 것은 무엇입니까?",
+    question: "22. 당신이 직업을 선택할 때 가장 중요하게 여기는 것은 무엇입니까?",
 
     image: "",
 
     answers: [
         { text: "높은 연봉", score: 50 },
-        { text: "사회적 지위", score: 25 },
-        { text: "자신의 꿈", score: 0 },
+        { text: "사회적 지위", score: 0 },
+        { text: "자신의 꿈", score: 25 },
         { text: "유연한 근무 환경", score: 75 },
         { text: "안정적인 직장", score: 100 }
     ]
@@ -422,9 +421,9 @@ const questions = [
         { text: "맛집이나 핫플 놀러가서 사진찍기", score: 82 },
         { text: "자연 속에서 산책하거나 등산/캠핑하기", score: 18 },
         { text: "한 장소에 같이 있지만 각자 할일 하기", score: 27 },
-        { text: "색다르고 새로운 경험 하기", score: 73 },
         { text: "운동하거나 스포츠 경기 관람하기", score: 9 },
         { text: "뭘 하든지 다 좋으니 함께 많은 시간 붙어있기", score: 91 },
+        { text: "색다르고 새로운 경험 하기", score: 73 },
         { text: "번식활동", score: 45 }
     ]
 },
@@ -432,15 +431,17 @@ const questions = [
 {
     category: "연애관",
 
-    question: "25. 당신은 연애를 몇 번 해봤습니까?",
+    question: "25. 당신은 연인에게 어떤 애칭을 사용합니까?",
 
     image: "",
 
     answers: [
-        { text: "모태솔로", score: 67 },
-        { text: "1~3번", score: 100 },
-        { text: "4~6번", score: 33 },
-        { text: "7번 이상", score: 0 }
+        { text: "이름/누나", score: 0 },
+        { text: "자기/여보", score: 50 },
+        { text: "공주/애기", score: 75 },
+        { text: "이쁜이/귀요미", score: 25 },
+        { text: "둘만 아는 애칭", score: 100 },
+        
     ]
 },
 
@@ -470,7 +471,7 @@ const questions = [
     answers: [
         { text: "일반적인 서양식 결혼식", score: 100 },
         { text: "교회나 성당에서 작은 결혼식", score: 60 },
-        { text: "한복 입고 한국 전통 결혼식", score: 20 },
+        { text: "한복 입는 한국 전통 결혼식", score: 20 },
         { text: "야외에서 자유로운 결혼식", score: 40 },
         { text: "결혼식 안 하고 돈 아끼기", score: 80 },
         { text: "비혼주의", score: 0 }
@@ -515,12 +516,12 @@ const questions = [
 
     image: "",
 
-    answers: [
+    answers: [ 
+        { text: "서로 협력하여 올바른 교육을 하려고 노력한다", score: 100 }, 
         { text: "기계든 사람이든 때려서 고치는 게 맞다", score: 50 },
-        { text: "넘치는 사랑과 관심으로 키운다", score: 0 },
+        { text: "넘치는 사랑과 관심으로 잘 키운다", score: 0 },
         { text: "자녀를 버리고 다른 자녀를 키운다", score: 25 },
-        { text: "전문가의 도움을 받는다", score: 75 },
-        { text: "부부가 같이 협력하여 올바른 교육을 하려고 노력한다", score: 100 }
+        { text: "전문가의 도움을 받는다", score: 75 }
     ]
 },
 
@@ -530,6 +531,8 @@ const questions = [
     question: "31. 당신은 어떤 음식을 좋아합니까?",
 
     image: "",
+
+    twoColumn: true,
 
     answers: [
         { text: "한식", score: 100 },
@@ -548,12 +551,14 @@ const questions = [
 
     image: "",
 
+    twoColumn: true,
+
     answers: [
         { text: "돼지고기", score: 60 },
         { text: "소고기", score: 40 },
         { text: "닭고기", score: 100 },
-        { text: "양고기", score: 80 },
         { text: "오리고기", score: 20 },
+        { text: "양고기", score: 80 },
         { text: "그 외", score: 0 }
     ]
 },
@@ -577,9 +582,11 @@ const questions = [
 {
     category: "취향",
 
-    question: "34. 당신은 어떤 영화 장르를 좋아합니까?",
+    question: "34. 당신은 어떤 장르의 영화를 좋아합니까?",
 
     image: "",
+
+    twoColumn: true,
 
     answers: [ 
         { text: "추리/미스터리", score: 57 },
@@ -599,6 +606,8 @@ const questions = [
     question: "35. 당신은 어떤 음악 장르를 좋아합니까?",
 
     image: "",
+
+    twoColumn: true,
 
     answers: [
         { text: "발라드", score: 78 },
@@ -621,6 +630,8 @@ const questions = [
 
     image: "",
 
+    twoColumn: true,
+
     answers: [
         { text: "RPG/MMORPG", score: 33 },
         { text: "FPS/TPS", score: 78 },
@@ -641,6 +652,8 @@ const questions = [
     question: "37. 당신은 어떤 과목을 좋아합니까?",
 
     image: "",
+
+    twoColumn: true,
 
     answers: [
         { text: "국어", score: 100 },
@@ -665,27 +678,26 @@ const questions = [
 
     answers: [
         { text: "낮져밤이", score: 100 },
-        { text: "낮이밤져", score: 50 },
-        { text: "낮져밤져", score: 75 },
-        { text: "낮이밤이", score: 25 },
-        { text: "엥 그게 뭐죠?", score: 0 },
+        { text: "낮이밤져", score: 33 },
+        { text: "낮져밤져", score: 67 },
+        { text: "낮이밤이", score: 0 }
     ]
 },
 
 {
     category: "취향",
 
-    question: "39. 당신은 어떤 연락 방식을 좋아합니까?",
+    question: "39. 당신은 어떤 여성 옷 스타일을 좋아합니까?",
 
     image: "",
 
     answers: [
-        { text: "카톡으로 틈틈이 연락하기", score: 40 },
-        { text: "하루에 한 번 전화로 수다떨기", score: 60 },
-        { text: "디엠으로 심심할 때 릴스 보내기", score: 20 },
-        { text: "적절하게 섞어서 사용하기", score: 80 },
-        { text: "난 다 좋아! 완전 칼답!", score: 100 },
-        { text: "중요한 일 아니면 연락하기 귀찮아..", score: 0 }
+        { text: "캐주얼", score: 40 },
+        { text: "빈티지", score: 0 },
+        { text: "페미닌", score: 100 },
+        { text: "미니멀", score: 20 },
+        { text: "스트릿", score: 60 },
+        { text: "오피스", score: 80 }
     ]
 },
 
@@ -698,11 +710,10 @@ const questions = [
 
     answers: [
         { text: "소주 3잔", score: 100 },
-        { text: "소주 반병 ~ 한 병 ", score: 83 },
-        { text: "소주 한 병 반 ~ 두 병", score: 67 },
-        { text: "소주 두 병 반 ~ 세 병", score: 50 },
-        { text: "소주 세 병 반 이상", score: 33 },
-        { text: "다른 술을 선호", score: 17 },
+        { text: "소주 반병 ~ 한 병 ", score: 80 },
+        { text: "소주 한 병 반 ~ 두 병", score: 60 },
+        { text: "소주 두 병 반 ~ 세 병", score: 40 },
+        { text: "소주 세 병 반 이상", score: 20 },
         { text: "술을 안 마심", score: 0 }
     ]
 },
@@ -710,15 +721,14 @@ const questions = [
 {
     category: "진짜 중요한 문제",
 
-    question: "41. 당신의 샤워 주기는 어떻게 됩니까?",
+    question: "41. 당신은 청결한 사람입니까?",
 
     image: "",
 
     answers: [
-        { text: "하루에 두 번", score: 67 },
-        { text: "하루에 한 번", score: 100 },
-        { text: "2일에 한 번", score: 33 },
-        { text: "집에만 있으면 거의 안 씻음", score: 0 }
+        { text: "그냥 잘 씻는다", score: 100 },
+        { text: "결벽증이 있다", score: 50 },
+        { text: "지저분한 편이다", score: 0 }
     ]
 },
 
@@ -729,11 +739,11 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "배털, 가슴털 있음", score: 0 },
-        { text: "팔, 다리털 두꺼움", score: 50 },
-        { text: "겨드랑이랑 중요 부위만 두꺼움", score: 100 },
-        { text: "털들이 다 얇음", score: 25 },
-        { text: "왁싱 주기적으로 받음", score: 75 }
+        { text: "배랑 가슴에 털 있음", score: 0 },
+        { text: "팔이랑 다리털 두꺼움", score: 50 },
+        { text: "전체적으로 털이 다 얇음", score: 25 },
+        { text: "겨드랑이랑 중요 부위만 털이 두꺼움", score: 100 },
+        { text: "브라질리언왁싱을 주기적으로 받음", score: 75 }
     ]
 },
 
@@ -747,7 +757,7 @@ const questions = [
     answers: [
         { text: "원나블 같은 유명한 애니만 봤다", score: 50 },
         { text: "음지/씹덕/마이너 애니도 많이 봤다", score: 100 },
-        { text: "애니메이션 안 좋아한다", score: 0 }
+        { text: "애니메이션을 별로 안 좋아한다", score: 0 }
     ]
 },
 
@@ -759,11 +769,10 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "쇼미 좋아한다", score: 0 },
-        { text: "래퍼 좋아한다", score: 25 },
-        { text: "국힙 좋아한다", score: 50 },
-        { text: "하루에 힙합 4시간 이상 듣는다", score: 75 },
-        { text: "노래방 가서 힙합 부를 수 있다", score: 100 }
+        { text: "쇼미나 래퍼를 좋아한다", score: 0 },
+        { text: "국내 힙합 좋다고 생각한다", score: 33 },
+        { text: "하루에 힙합을 4시간 이상 듣는다", score: 67 },
+        { text: "노래방 가서 힙합을 부를 수 있다", score: 100 }
     ]
 },
 
@@ -775,7 +784,7 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "게임 안 함", score: 0 },
+        { text: "게임을 안 함", score: 0 },
         { text: "1~3시간", score: 33 },
         { text: "4~6시간", score: 67 },
         { text: "7시간 이상", score: 100 }
@@ -792,7 +801,7 @@ const questions = [
     answers: [
         { text: "전역", score: 100 },
         { text: "공익/면제", score: 50 },
-        { text: "가기 전", score: 0 }
+        { text: "미필", score: 0 }
     ]
 },
 
@@ -807,8 +816,8 @@ const questions = [
 
     answers: [
         { text: "한 번도 없음", score: 0 },
-        { text: "학원/과외/인포/간단 사무 등 비교적 쉬운 알바 해봄", score: 33 },
-        { text: "쿠팡/고기집/배달/주방/설거지 등 비교적 힘든 알바 해봄", score: 67 },
+        { text: "학원/과외/인포/간단 사무 등 비교적 쉬운 알바를 해봄", score: 33 },
+        { text: "공장/고기집/배달/주방/설거지 등 비교적 힘든 알바를 해봄", score: 67 },
         { text: "다양한 알바를 아주 많이 해봄", score: 100 },
     ]
 },
@@ -823,7 +832,7 @@ const questions = [
     answers: [
         { text: "네", score: 100 },
         { text: "아니요", score: 0 },
-        { text: "지금은 아니지만 전에 1년 이상 자취를 해본 경험이 있음", score: 50 }
+        { text: "지금은 아니지만 전에 1년 이상 자취를 해본 경험이 있다", score: 50 }
     ]
 },
 
@@ -847,7 +856,8 @@ const questions = [
 
     question: "50. 당신은 분리배출을 잘 합니까? (검색 금지)",
 
-    description: "문제 : 휴지 덩어리, 작은 플라스틱, 계란 껍데기, 바나나껍질, 종이는 일반 쓰레기이고 작은 생선 뼈, 요거트, 냉동과일, 파인애플, 상한 고기는 음식물 쓰레기이다. ",
+    description: "문제 : 휴지 덩어리, 작은 플라스틱, 계란 껍데기, 바나나껍질, 종이는 일반 쓰레기이고\n\
+     작은 생선 뼈, 요거트, 냉동과일, 파인애플, 상한 고기는 음식물 쓰레기이다. ",
 
     image: "",
 
@@ -861,7 +871,7 @@ const questions = [
 {
     category: "진짜 중요한 문제",
 
-    question: "51. 당신은 정말 친한 친구가 몇 명 있습니까?",
+    question: "51. 당신은 친한 친구가 몇 명 있습니까?",
 
     image: "",
 
@@ -881,10 +891,9 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "무서워서 덜덜떨고 심장이 터질 것 같다", score: 75 },
-        { text: "혼자 밤에 공포영화 보는 건 못한다", score: 100 },
-        { text: "볼 수는 있는데 귀신이나 잔인한 장면은 무섭다", score: 50 },
-        { text: "갑툭튀만 아니면 미동도 없다", score: 25 },
+        { text: "공포영화를 보면 무서워서 몸이 덜덜 떨린다", score: 100 },
+        { text: "볼 수는 있는데 귀신이나 잔인한 장면은 조금 무섭다", score: 67 },
+        { text: "갑툭튀만 아니면 잘 안 놀란다", score: 33 },
         { text: "하나도 안 무섭다", score: 0 }
     ]
 },
@@ -944,8 +953,8 @@ const questions = [
 
     answers: [
         { text: "타자가 빠르다", score: 50 },
-        { text: "타자도 빠르고 컴퓨터도 잘 다룬다", score: 100 },
-        { text: "타자 느리고 컴맹이다", score: 0 }
+        { text: "타자가 빠르고 컴퓨터를 잘 다룬다", score: 100 },
+        { text: "타자가 느리고 컴맹이다", score: 0 }
     ]
 },
 
@@ -959,7 +968,7 @@ const questions = [
     answers: [
         { text: "네", score: 50 },
         { text: "아니요", score: 0 },
-        { text: "손 크고 예뻐요", score: 100 }
+        { text: "손이 크고 예쁘다", score: 100 }
     ]
 },
 
@@ -968,44 +977,39 @@ const questions = [
 
     question: "58. 당신은 식사예절이 좋습니까?",
 
-    description:"정직하게 답변",
-
-    question: "음식을 먹을 때 절대 쩝쩝거리지 않는다",
-    question: "면치기를 하지 않는다",
-    question: "젓가락질을 올바르게 한다",
-    question: "내 음식이 먼저 나왔어도 상대 음식이 나오기 전까지 먹지 않고 기다린다",
-    question: "식탐을 부리지 않고 상대방과 속도를 맞춰 먹는다",
-    question: "편식을 하지 않고 골고루 먹는다",
-    question: "식사 자리에서 핸드폰을 보지 않는다",
-    question: "입을 닦은 냅킨은 상대방에게 보이지 않게 잘 접어 치워두거나 무릎에 둔다",
-    question: "식사에 사용되는 식기의 위치를 정확하게 알고 있다",
-    question: "식사를 할 때 식기가 긁히거나 부딪히는 소리를 내지 않는다",
+    description:
+    "1. 면치기를 하지 않는다\n\
+     2. 젓가락질을 올바르게 한다\n\
+     3. 음식을 먹을 때 쩝쩝거리지 않는다\n\
+     4. 식사 자리에선 핸드폰을 보지 않는다\n\
+     5. 식탐을 부리지 않고 상대방과 속도를 맞춰 먹는다\n\
+     6. 식사에 사용되는 식기의 위치를 정확하게 알고 있다\n\
+     7. 식사를 할 때 식기가 긁히거나 부딪히는 소리를 내지 않는다\n\
+     8. 입을 닦은 냅킨은 상대방에게 보이지 않게 잘 접어 치워두거나 무릎에 둔다\n\
+     9. 내 음식이 먼저 나왔어도 상대방 음식이 나오기 않았다면 먹지 않고 기다린다",
 
     image: "",
 
     answers: [
         { text: "0~3개 해당", score: 0 },
-        { text: "4~5개 해당", score: 25 },
-        { text: "6~7개 해당", score: 50 },
-        { text: "8~9개 해당", score: 75 },
-        { text: "전부 다 해당", score: 100 }
+        { text: "4~5개 해당", score: 33 },
+        { text: "6~7개 해당", score: 67 },
+        { text: "8~9개 해당", score: 100 }
     ]
 },
 
 {
     category: "진짜 중요한 문제",
 
-    question: "59. 당신은 보기 중 몇 곳을 가봤습니까?",
-
-    description: "보기 : 게스트하우스, 클럽, 헌팅포차, 양양서핑, 가평빠지, 유흥업소",
+    question: "59. 당신은 쌍꺼풀이 있습니까?",
 
     image: "",
 
     answers: [
-        { text: "0개", score: 100 },
-        { text: "1~2개", score: 67 },
-        { text: "3~4개", score: 33 },
-        { text: "5~6개", score: 0 }
+        { text: "무쌍", score: 100 },
+        { text: "속쌍", score: 67 },
+        { text: "유쌍", score: 0 },
+        { text: "짝눈", score: 33 }
     ]
 },
 
@@ -1018,13 +1022,307 @@ const questions = [
 
     answers: [
         { text: "맞춤법 검사기를 돌리고 보낼 정도로 잘 지킨다", score: 100 },
-        { text: "기본 상식으로 쓰는데 거의 다 맞다", score: 80 },
-        { text: "안 틀리려고 노력한다", score: 60 },
-        { text: "가끔 몇 개씩 틀리는 것 같다", score: 40 },
-        { text: "자주 헷갈리고 틀린다", score: 20 },
+        { text: "기본 상식으로 쓰는데 거의 다 맞다", score: 75 },
+        { text: "안 틀리려고 노력한다", score: 50 },
+        { text: "가끔 몇 개씩 틀린다", score: 25 },
         { text: "귀찮아서 잘 안 지킨다", score: 0 }
     ]
 },
 
+{
+    category: "진짜 중요한 문제",
+
+    question: "61. 당신은 무엇을 가장 좋아합니까?",
+
+    image: "",
+
+    answers: [
+        { text: "여캠/여자 방송인", score: 50 },
+        { text: "여자 인플루언서", score: 25 },
+        { text: "여자 버추얼 유튜버", score: 0 },
+        { text: "여자 연예인", score: 75 },
+        { text: "관심 없음", score: 100 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "62. 당신은 물을 많이 마십니까?",
+
+    image: "",
+
+    answers: [
+        { text: "물 먹는 하마다", score: 100 },
+        { text: "평범하다", score: 50 },
+        { text: "잘 마시지 않는다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "63. 당신은 얼굴, 피부에 얼마나 관심이 많습니까?",
+
+    image: "",
+
+    answers: [
+        { text: "피부과나 성형외과를 다닌다", score: 67 },
+        { text: "피부 케어를 하고 화장을 한다", score: 33 },
+        { text: "스킨, 로션, 선크림, 립밤 정도 바른다", score: 100 },
+        { text: "별로 관심이 없다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "64. 당신은 밥을 잘 먹습니까?",
+
+    image: "",
+
+    answers: [
+        { text: "완전 잘 먹는 대식가다", score: 100 },
+        { text: "1인분 정도 먹는다", score: 67 },
+        { text: "입 짧은 소식가다", score: 33 },
+        { text: "그냥 편식쟁이다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "65. 당신의 목소리는 어떤 편입니까?",
+
+    image: "",
+
+    answers: [
+        { text: "중저음", score: 100 },
+        { text: "비성", score: 0 },
+        { text: "미성", score: 33 },
+        { text: "담백", score: 67 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "66. 당신은 질투가 심한 편입니까?",
+
+    image: "",
+
+    answers: [
+        { text: "남자는 전부 다 짐승이니 절대 안 된다", score: 67 },
+        { text: "질투는 나지만 괜찮다", score: 100 },
+        { text: "남사친이랑 놀아도 된다", score: 33 },
+        { text: "뭘 하든 누구랑 만나든 상관 없다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "67. 당신은 기억력이 좋습니까?",
+
+    image: "",
+
+    answers: [
+        { text: "상대방의 모든 것을 기억한다", score: 100 },
+        { text: "기억하려고 노력은 한다", score: 50 },
+        { text: "기억력이 좋지 않다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "68. 당신은 연락을 잘 확인합니까?",
+
+    image: "",
+
+    answers: [
+        { text: "3분 이내 확인", score: 100 },
+        { text: "30분 이내 확인", score: 50 },
+        { text: "1시간 이상", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "69. 당신은 똑똑합니까?",
+
+    image: "",
+
+    answers: [
+        { text: "공부를 잘 한다", score: 67 },
+        { text: "지식이 많다", score: 100 },
+        { text: "지능이 높다", score: 33 },
+        { text: "똑똑하지 않다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "70. 당신은 어떤 스킨십을 가장 좋아합니까?",
+
+    image: "",
+
+    answers: [
+        { text: "손잡기/팔짱", score: 67 },
+        { text: "뽀뽀/키스", score: 100 },
+        { text: "포옹/허그", score: 33 },
+        { text: "별로 안 좋아한다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "71. 당신은 연애를 몇 번 해봤습니까?",
+
+    image: "",
+
+    answers: [
+        { text: "모태솔로", score: 67 },
+        { text: "1~3번", score: 100 },
+        { text: "4~6번", score: 33 },
+        { text: "7번 이상", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "72. 당신은 데이트 비용을 어떻게 생각합니까?",
+
+    image: "",
+
+    answers: [
+        { text: "내가 낸다", score: 67 },
+        { text: "너가 내라", score: 0 },
+        { text: "더치페이 한다", score: 33 },
+        { text: "번갈아가며 낸다", score: 100 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "73. 당신은 여사친이 있습니까?",
+
+    image: "",
+
+    answers: [
+        { text: "있다", score: 100 },
+        { text: "없다", score: 50 },
+        { text: "많다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "74. 당신은 몸에 땀이 많습니까?",
+
+    image: "",
+
+    answers: [
+        { text: "땀이 온 몸에 줄줄 흐른다", score: 0 },
+        { text: "겨드랑이나 등만 젖는다", score: 33 },
+        { text: "손에만 난다", score: 67 },
+        { text: "땀이 없다", score: 100 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "75. 당신은 기념일을 잘 챙깁니까?",
+
+    image: "",
+
+    answers: [
+        { text: "사소한 기념일도 다 챙긴다", score: 100 },
+        { text: "생일이나 1주년 같은 큰 기념일만 챙긴다", score: 50 },
+        { text: "잘 챙기지 않는다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "76. 당신은 강합니까?",
+
+    image: "",
+
+    answers: [
+        { text: "약하다", score: 0 },
+        { text: "보통이다", score: 50 },
+        { text: "강하다", score: 100 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "77. 당신은 요리를 잘 합니까?",
+
+    image: "",
+
+    answers: [
+        { text: "네", score: 100 },
+        { text: "아니요", score: 0 },
+        { text: "잘 못하지만 노력할 수 있다", score: 50 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "78. 당신은 밈을 많이 알고 있습니까?",
+
+    image: "",
+
+    answers: [
+        { text: "고전/음지/마이너한 밈도 전부 다 안다", score: 100 },
+        { text: "영화나 릴스에 나오는 밈 정도는 안다", score: 67 },
+        { text: "유행하는 밈을 늦게 배운다", score: 33 },
+        { text: "밈을 잘 모른다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    question: "79. 당신을 가장 잘 설명하는 말은 무엇입니까?",
+
+    image: "",
+
+    answers: [
+        { text: "다정하다", score: 75 },
+        { text: "어른스럽다", score: 25 },
+        { text: "눈치가 빠르다", score: 100 },
+        { text: "책임감이 강하다", score: 50 },
+        { text: "해당하는 것이 없다", score: 0 }
+    ]
+},
+
+{
+    category: "진짜 중요한 문제",
+
+    description: "이제 마지막 문제입니다.",
+
+    question: "80. 당신은 유예정에게 이성적 호감이 있습니까?",
+
+    image: "",
+
+    answers: [
+        { text: "없다", score: 0 },
+        { text: "있다", score: 50 },
+        { text: "사랑한다", score: 100 }
+    ]
+}
 
 ];

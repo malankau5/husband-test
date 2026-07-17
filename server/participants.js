@@ -4,18 +4,17 @@ const db = require("./db");
 const router = express.Router();
 
 router.post("/", (req, res) => {
+
     console.log("POST 요청 도착");
     console.log(req.body);
 
     const {
-
         name,
         phone,
         birth,
         region,
         photo,
         percent
-
     } = req.body;
 
     const sql = `
@@ -25,9 +24,7 @@ router.post("/", (req, res) => {
     `;
 
     db.query(
-
         sql,
-
         [
             name,
             phone,
@@ -36,15 +33,17 @@ router.post("/", (req, res) => {
             photo,
             percent
         ],
-
         (err, result) => {
 
             if (err) {
 
+                console.error("POST 오류");
                 console.error(err);
 
                 return res.status(500).json({
-                    success: false
+                    success: false,
+                    code: err.code,
+                    message: err.message
                 });
 
             }
@@ -54,7 +53,6 @@ router.post("/", (req, res) => {
             });
 
         }
-
     );
 
 });
@@ -62,25 +60,33 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
 
     db.query(
-
-        `SELECT
+        `
+        SELECT
             id,
             name,
             photo,
             percent
         FROM participants
-        ORDER BY percent DESC, id ASC`,
-
+        ORDER BY percent DESC, id ASC
+        `,
         (err, results) => {
 
             if (err) {
-                return res.status(500).json(err);
+
+                console.error("GET 오류");
+                console.error(err);
+
+                return res.status(500).json({
+                    success: false,
+                    code: err.code,
+                    message: err.message
+                });
+
             }
 
             res.json(results);
 
         }
-
     );
 
 });
@@ -88,16 +94,32 @@ router.get("/", (req, res) => {
 router.get("/ranking/:name", (req, res) => {
 
     db.query(
-
-        "SELECT name, photo, percent FROM participants ORDER BY percent DESC, id ASC",
-
+        `
+        SELECT
+            name,
+            photo,
+            percent
+        FROM participants
+        ORDER BY percent DESC, id ASC
+        `,
         (err, results) => {
 
-            if(err){
-                return res.status(500).json(err);
+            if (err) {
+
+                console.error("RANK 오류");
+                console.error(err);
+
+                return res.status(500).json({
+                    success: false,
+                    code: err.code,
+                    message: err.message
+                });
+
             }
 
-            const index = results.findIndex(user => user.name === req.params.name);
+            const index = results.findIndex(
+                user => user.name === req.params.name
+            );
 
             res.json({
 
@@ -107,7 +129,6 @@ router.get("/ranking/:name", (req, res) => {
             });
 
         }
-
     );
 
 });

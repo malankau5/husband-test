@@ -26,61 +26,61 @@ let resultDescription = "";
 if(percent >= 95){
 
     resultTitle = "유예정 남편 확정";
-    resultDescription = "설명";
+    resultDescription = "당신은 이제 도망칠 수 없습니다.";
 
 }
 else if(percent >= 90){
 
     resultTitle = "결혼 후보";
-    resultDescription = "설명";
+    resultDescription = "애인 없으면 저랑 결혼하시죠.";
 
 }
 else if(percent >= 80){
 
     resultTitle = "매우 좋은 궁합";
-    resultDescription = "설명";
+    resultDescription = "저랑 사귀실래요?";
 
 }
 else if(percent >= 70){
 
     resultTitle = "좋은 궁합";
-    resultDescription = "설명";
+    resultDescription = "제 이상형이시네요.";
 
 }
 else if(percent >= 60){
 
-    resultTitle = "가능성 있음";
-    resultDescription = "설명";
+    resultTitle = "나쁘지 않음";
+    resultDescription = "친한 친구는 가능할 것 같아요.";
 
 }
 else if(percent >= 50){
 
     resultTitle = "노력 필요";
-    resultDescription = "설명";
+    resultDescription = "그래도 절반은 맞으셨네요.";
 
 }
 else if(percent >= 40){
 
-    resultTitle = "애매한 궁합";
-    resultDescription = "설명";
+    resultTitle = "좋지 않음";
+    resultDescription = "음... 네... 뭐...";
 
 }
 else if(percent >= 30){
 
-    resultTitle = "친구 추천";
-    resultDescription = "설명";
+    resultTitle = "전혀 안 맞음";
+    resultDescription = "앞으로 다시 볼 일은 없을 것 같네요.";
 
 }
 else if(percent >= 20){
 
-    resultTitle = "취향 차이";
-    resultDescription = "설명";
+    resultTitle = "나쁨";
+    resultDescription = "저는 당신이 싫습니다.";
 
 }
 else{
 
-    resultTitle = "다음 기회에";
-    resultDescription = "설명";
+    resultTitle = "최악";
+    resultDescription = "당장 내 주변에서 꺼져.";
 
 }
 
