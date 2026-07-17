@@ -131,12 +131,25 @@ function nextQuestion(answerIndex) {
         totalScore
     );
 
+    console.log("===== 저장 직전 =====");
+    console.log("currentQuestion:", currentQuestion);
+    console.log("totalScore:", totalScore);
+    console.log("userAnswers:", userAnswers);
+
+    localStorage.setItem("userAnswers", JSON.stringify(userAnswers));
+    localStorage.setItem("totalScore", totalScore);
+
+    console.log("LS userAnswers:", localStorage.getItem("userAnswers"));
+    console.log("LS totalScore:", localStorage.getItem("totalScore"));
+
     currentQuestion++;
 
     localStorage.setItem(
         "currentQuestion",
         currentQuestion
     );
+
+    console.log("currentQuestion 증가 후:", currentQuestion);
 
     // 페이지 전환 효과
     document.body.style.opacity = "0";
