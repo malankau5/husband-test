@@ -41,27 +41,30 @@ function showUser(user){
 
     let html="";
 
-    answers.forEach((answer,index)=>{
+    answers.forEach((answer, index) => {
 
-    if(answer==null) return;
+        if (!answer) return;
 
-    html+=`
+        const question = questions[index];
+        const selected = question.answers[answer.answerIndex];
 
-    <div class="answer">
+        html += `
+            <div class="answer-item">
+                <div class="question">
+                    ${index + 1}. ${question.question}
+                </div>
 
-        <div class="question-title">
-            ${questions[index].question}
-        </div>
+                <div class="selected-answer">
+                    ✔ ${selected.text}
+                </div>
 
-        <div class="question-answer">
-            ✔ ${questions[index].answers[answer.answerIndex].text}
-        </div>
+                <div class="score">
+                    점수 : ${answer.score}
+                </div>
+            </div>
+        `;
 
-    </div>
-
-    `;
-
-});
+    });
 
     detail.innerHTML=`
 

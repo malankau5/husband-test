@@ -149,9 +149,13 @@ body: JSON.stringify({
 })
 
 })
-.then(res => {
+.then(async res => {
 
-    console.log("2. 응답:", res.status);
+    console.log("응답:", res.status);
+
+    if (!res.ok) {
+        throw new Error(await res.text());
+    }
 
     return res.json();
 
