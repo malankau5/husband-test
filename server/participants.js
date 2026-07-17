@@ -3,6 +3,38 @@ const db = require("./db");
 
 const router = express.Router();
 
+db.query(`
+CREATE TABLE IF NOT EXISTS participants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(30) NOT NULL,
+    birth VARCHAR(30) NOT NULL,
+    region VARCHAR(100) NOT NULL,
+
+    photo LONGTEXT,
+
+    percent INT NOT NULL,
+
+    answers JSON,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+`, (err) => {
+
+    if (err) {
+
+        console.error("participants 테이블 생성 실패");
+        console.error(err);
+
+    } else {
+
+        console.log("participants 테이블 준비 완료");
+
+    }
+
+});
+
 router.post("/", (req, res) => {
 
     console.log("POST 요청 도착");
@@ -14,7 +46,8 @@ router.post("/", (req, res) => {
         birth,
         region,
         photo,
-        percent
+        percent,
+        answers
     } = req.body;
 
     const sql = `
