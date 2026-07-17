@@ -2075,20 +2075,24 @@ select:hover{
 
 #questionDescription{
 
-    width:fit-content;
+    width:100%;
 
-    margin:20px auto 30px;
+    max-width:520px;
+
+    margin:15px 0 28px;
+
+    padding-left:0px;
 
     text-align:left;
 
     color:#444;
 
-    font-size:18px;
+    font-size:15px;
 
     font-weight:600;
 
-    white-space:pre-line;
+    line-height:1.45;
 
-    line-height:1.5;
+    white-space:pre-line;
 
 }
