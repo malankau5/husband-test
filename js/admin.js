@@ -135,22 +135,6 @@ function showUser(user){
             ${html}
         </div>
 
-        <button
-            onclick="deleteUser(${user.id})"
-            style="
-                margin-top:20px;
-                background:#ff3b30;
-                color:#fff;
-                border:none;
-                padding:10px 20px;
-                border-radius:10px;
-                cursor:pointer;
-                font-weight:bold;
-            "
-        >
-            삭제
-        
-            </button>
     `;
 
 }
@@ -164,22 +148,3 @@ searchInput.addEventListener("input",()=>{
     );
 
 });
-
-async function deleteUser(id){
-
-    if(!confirm("정말 삭제하시겠습니까?")) return;
-
-    const res = await fetch(`/api/participants/${id}`,{
-        method:"DELETE"
-    });
-
-    const data = await res.json();
-
-    if(data.success){
-        alert("삭제되었습니다.");
-        location.reload();
-    }else{
-        alert("삭제에 실패했습니다.");
-    }
-
-}
