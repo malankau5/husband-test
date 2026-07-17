@@ -141,8 +141,6 @@ function showUser(user){
 
     `;
 
-    const deleteBtn = document.getElementById("deleteBtn");
-
 deleteBtn.style.display = "inline-block";
 
 deleteBtn.onclick = async () => {
