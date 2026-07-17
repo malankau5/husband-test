@@ -34,10 +34,11 @@ function renderQuestion() {
         return;
     }
 
-    document.getElementById("category").textContent = "#" + question.category;
+   document.getElementById("category").textContent = "#" + q.category;
 
-    questionTitle.textContent = q.question;
-    document.getElementById("questionDescription").textContent = question.description;
+   questionTitle.textContent = q.question;
+
+   document.getElementById("questionDescription").textContent = q.description || "";
 
     // 이미지 표시
     if (q.image && q.image !== "") {
