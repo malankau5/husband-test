@@ -769,9 +769,10 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "쇼미나 래퍼를 좋아한다", score: 0 },
-        { text: "국내 힙합 좋다고 생각한다", score: 33 },
-        { text: "하루에 힙합을 4시간 이상 듣는다", score: 67 },
+        { text: "안 좋아한다", score: 0 },
+        { text: "쇼미나 래퍼를 좋아한다", score: 25 },
+        { text: "국내 힙합 좋다고 생각한다", score: 50 },
+        { text: "하루에 힙합을 4시간 이상 듣는다", score: 75 },
         { text: "노래방 가서 힙합을 부를 수 있다", score: 100 }
     ]
 },
