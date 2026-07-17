@@ -34,9 +34,10 @@ function renderQuestion() {
         return;
     }
 
-    document.getElementById("category").textContent = q.category;
+    document.getElementById("category").textContent = "#" + question.category;
 
     questionTitle.textContent = q.question;
+    document.getElementById("questionDescription").textContent = question.description;
 
     // 이미지 표시
     if (q.image && q.image !== "") {

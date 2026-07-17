@@ -2072,3 +2072,19 @@ select:hover{
     }
 
 }
+
+#questionDescription{
+
+    margin-top:-10px;
+
+    margin-bottom:30px;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
