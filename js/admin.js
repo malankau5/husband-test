@@ -53,7 +53,9 @@ function renderUsers(list){
 
 function showUser(user){
 
-    const answers=JSON.parse(user.answers||"[]");
+    const answers = Array.isArray(user.answers)
+    ? user.answers
+    : JSON.parse(user.answers || "[]");
 
     let html="";
 
