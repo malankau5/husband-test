@@ -70,12 +70,7 @@ document.getElementById("next").onclick = function () {
 
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
-    const birthYear = document.getElementById("birthYear").value;
-    const birthMonth = document.getElementById("birthMonth").value;
-    const birthDay = document.getElementById("birthDay").value;
-
-    const birth = `${birthYear}-${birthMonth.padStart(2,"0")}-${birthDay.padStart(2,"0")}`;
-
+    const birth = document.getElementById("birth").value.trim();
     const region = document.getElementById("region").value;
 
     if (name === "") {
@@ -93,14 +88,10 @@ document.getElementById("next").onclick = function () {
         return;
     }
 
-   if (
-    birthYear === "" ||
-    birthMonth === "" ||
-    birthDay === ""
-) {
-    alert("생년월일을 입력해주세요.");
-    return;
-}
+    if (birth === "") {
+        alert("생년월일을 입력해주세요.");
+        return;
+    }
 
     // 참가자 정보 저장
     localStorage.setItem("name", name);
