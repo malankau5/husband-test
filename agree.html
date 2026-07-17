@@ -1,44 +1,80 @@
-<h1 class="main-title">
-    개인정보 수집 동의
-</h1>
+<!DOCTYPE html>
+<html lang="ko">
 
-<p class="sub-title">
-    테스트 진행을 위해<br>
-    아래 내용에 동의해주세요.
-</p>
+<head>
 
-<div class="agree-card">
+    <meta charset="UTF-8">
 
-    <div class="agree-item">
-        ✔ 이름
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>개인정보 수집 동의</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container fade">
+
+    <h1 class="main-title">
+        개인정보 수집 동의
+    </h1>
+
+    <p class="sub-title">
+        테스트 진행을 위해<br>
+        아래 내용을 확인해주세요.
+    </p>
+
+    <div class="agree-card">
+
+        <div class="agree-item">
+            ✔ 이름
+        </div>
+
+        <div class="agree-item">
+            ✔ 전화번호
+        </div>
+
+        <div class="agree-item">
+            ✔ 생년월일
+        </div>
+
+        <div class="agree-item">
+            ✔ 지역
+        </div>
+
+        <div class="agree-item">
+            ✔ 프로필 사진
+        </div>
+
     </div>
 
-    <div class="agree-item">
-        ✔ 전화번호
-    </div>
+    <label class="agree-check">
 
-    <div class="agree-item">
-        ✔ 생년월일
-    </div>
+        <input
+            type="checkbox"
+            id="agree">
 
-    <div class="agree-item">
-        ✔ 지역
-    </div>
+        <span>
+            개인정보 수집 및 이용에 동의합니다.
+        </span>
 
-    <div class="agree-item">
-        ✔ 프로필 사진
-    </div>
+    </label>
+
+    <button
+        id="nextBtn"
+        class="main-btn">
+
+        다음
+
+    </button>
 
 </div>
 
-<label class="agree-check">
+<script src="js/agree.js"></script>
 
-    <input type="checkbox" id="agree">
-
-    <span>개인정보 수집 및 이용에 동의합니다.</span>
-
-</label>
-
-<button id="nextBtn" class="main-btn">
-    다음
-</button>
+</body>
+</html>

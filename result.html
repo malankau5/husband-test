@@ -1,79 +1,100 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>테스트 결과</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="css/style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="container fade">
 
     <h1 class="main-title">
-    테스트 결과
-</h1>
+        💗 테스트 결과
+    </h1>
 
-<p class="sub-title">
-    당신의 적합도입니다.
-</p>
-
-<div class="result-card">
-
-    <img
-        id="resultPhoto"
-        class="result-photo"
-    >
-
-    <div id="percent" class="result-score">
-    </div>
-
-    <div id="userName" class="result-name">
-    </div>
-
-    <div id="resultTitle"
-         class="result-title">
-    </div>
-
-    <p id="resultDescription"
-       class="result-desc">
+    <p class="sub-title">
+        유예정님과의<br>
+        궁합 결과입니다.
     </p>
 
-    <div id="myRank"
-         class="result-rank">
+    <div class="result-card">
+
+        <img
+            id="resultPhoto"
+            class="result-photo"
+            src=""
+            alt="프로필">
+
+        <div
+            id="percent"
+            class="result-score">
+
+            0%
+
+        </div>
+
+        <div
+            id="userName"
+            class="result-name">
+
+        </div>
+
+        <div
+            id="resultTitle"
+            class="result-title">
+
+        </div>
+
+        <p
+            id="resultDescription"
+            class="result-desc">
+
+        </p>
+
+        <div
+            id="myRank"
+            class="result-rank">
+
+        </div>
+
     </div>
 
+    <button
+        id="rankingBtn"
+        class="main-btn">
+
+        🏆 랭킹 보기
+
+    </button>
+
+    <button
+        id="restartBtn"
+        class="sub-btn">
+
+        🔄 다시 테스트
+
+    </button>
+
+    <button
+        id="shareBtn"
+        class="sub-btn">
+
+        📤 결과 공유
+
+    </button>
+
 </div>
-
-<button
-    id="rankingBtn"
-    class="main-btn">
-
-    랭킹 보기
-
-</button>
-
-<button
-    id="restartBtn"
-    class="sub-btn">
-
-    다시 테스트
-
-</button>
-
-<button
-    id="shareBtn"
-    class="sub-btn">
-
-    결과 공유
-
-</button>
 
 <script src="js/questions.js"></script>
 <script src="js/result.js"></script>
