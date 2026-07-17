@@ -117,9 +117,53 @@ document.getElementById("next").onclick = function () {
 
     reader.onload = function (e) {
 
-        localStorage.setItem("photo", e.target.result);
+        const img = new Image();
 
-        location.href = "question.html";
+        img.onload = function () {
+
+            const canvas = document.createElement("canvas");
+
+            const maxSize = 300;
+
+            let width = img.width;
+            let height = img.height;
+
+            if (width > height) {
+
+                if (width > maxSize) {
+
+                    height *= maxSize / width;
+                    width = maxSize;
+
+                }
+
+            } else {
+
+                if (height > maxSize) {
+
+                    width *= maxSize / height;
+                    height = maxSize;
+
+                }
+
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+
+            const ctx = canvas.getContext("2d");
+
+            ctx.drawImage(img, 0, 0, width, height);
+
+            const compressed = canvas.toDataURL("image/jpeg", 0.7);
+
+            localStorage.setItem("photo", compressed);
+
+            location.href = "question.html";
+
+        };
+
+        img.src = e.target.result;
 
     };
 
@@ -140,13 +184,54 @@ photoInput.addEventListener("change", function () {
 
     reader.onload = function (e) {
 
-        const preview = document.getElementById("photoPreview");
+        const img = new Image();
 
-        preview.style.backgroundImage = `url(${e.target.result})`;
-        preview.style.backgroundSize = "cover";
-        preview.style.backgroundPosition = "center";
+        img.onload = function () {
 
-        preview.innerHTML = "";
+            const canvas = document.createElement("canvas");
+
+            const maxSize = 300;
+
+            let width = img.width;
+            let height = img.height;
+
+            if (width > height) {
+
+                if (width > maxSize) {
+
+                    height *= maxSize / width;
+                    width = maxSize;
+
+                }
+
+            } else {
+
+                if (height > maxSize) {
+
+                    width *= maxSize / height;
+                    height = maxSize;
+
+                }
+
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+
+            const ctx = canvas.getContext("2d");
+
+            ctx.drawImage(img, 0, 0, width, height);
+
+            const preview = document.getElementById("photoPreview");
+
+            preview.style.backgroundImage = `url(${canvas.toDataURL("image/jpeg", 0.7)})`;
+            preview.style.backgroundSize = "cover";
+            preview.style.backgroundPosition = "center";
+            preview.innerHTML = "";
+
+        };
+
+        img.src = e.target.result;
 
     };
 

@@ -1,6 +1,3 @@
-const rankingBtn = document.getElementById("rankingBtn");
-rankingBtn.disabled = true;
-
 const totalScore = Number(localStorage.getItem("totalScore")) || 0;
 
 const percent =
@@ -176,15 +173,6 @@ body: JSON.stringify({
 
 });
 
-rankingBtn.onclick = function(){
-
-    if(rankingBtn.disabled){
-
-        alert("결과를 저장하는 중입니다. 잠시만 기다려주세요.");
-        return;
-
-    }
-
+document.getElementById("rankingBtn").onclick = function () {
     location.href = "ranking.html";
-
 };
