@@ -1,228 +1,91 @@
-const userList = document.getElementById("userList");
-const detail = document.getElementById("detail");
-const searchInput = document.getElementById("searchInput");
+const userList=document.getElementById("userList");
+const detail=document.getElementById("detail");
 
-let users = [];
-let selectedId = null;
-
-// 참가자 불러오기
 fetch("/api/participants/admin")
-    .then(res => res.json())
-    .then(data => {
 
-        users = data;
+.then(res=>res.json())
 
-        renderUserList(users);
+.then(users=>{
 
-        if (users.length > 0) {
-            selectedId = users[0].id;
-            renderUserList(users);
-            showUser(users[0]);
-        }
+    users.forEach(user=>{
 
-    })
-    .catch(err => {
-        console.error(err);
-        detail.innerHTML = "<h2>참가자 정보를 불러오지 못했습니다.</h2>";
-    });
+        const card=document.createElement("div");
 
-// 검색
-searchInput.addEventListener("input", () => {
+        card.className="user-card";
 
-    const keyword = searchInput.value.trim().toLowerCase();
+        card.innerHTML=`
 
-    const filtered = users.filter(user =>
-        user.name.toLowerCase().includes(keyword)
-    );
+            <img src="${user.photo}" class="user-photo">
 
-    renderUserList(filtered);
+            <div>
 
-});
+                <b>${user.name}</b><br>
 
-// 참가자 목록 출력
-function renderUserList(list) {
-
-    userList.innerHTML = "";
-
-    if (list.length === 0) {
-
-        userList.innerHTML = `
-            <div class="empty-user">
-                검색 결과가 없습니다.
-            </div>
-        `;
-
-        return;
-    }
-
-    list.forEach(user => {
-
-        const card = document.createElement("div");
-
-        card.className = "user-card";
-
-        if (selectedId === user.id) {
-            card.classList.add("active");
-        }
-
-        const photo = user.photo
-            ? user.photo
-            : "https://placehold.co/80x80?text=USER";
-
-        card.innerHTML = `
-            <img src="${photo}" class="user-photo">
-
-            <div class="user-info">
-
-                <div class="user-name">${user.name}</div>
-
-                <div class="user-score">
-                    ${user.percent}점
-                </div>
+                ${user.percent}점
 
             </div>
+
         `;
 
-        card.onclick = () => {
-
-            selectedId = user.id;
-
-            renderUserList(list);
-
-            showUser(user);
-
-        };
+        card.onclick=()=>showUser(user);
 
         userList.appendChild(card);
 
     });
 
-}
+});
 
-// 상세보기
-function showUser(user) {
+function showUser(user){
 
-    const answers = user.answers || [];
+    const answers=JSON.parse(user.answers||"[]");
 
-    const photo = user.photo
-        ? user.photo
-        : "https://placehold.co/250x250?text=USER";
-
-    let answerHtml = "";
+    let html="";
 
     answers.forEach((answer, index) => {
 
-        const q = questions[index];
+        if (!answer) return;
 
-        if (!q) return;
+        const question = questions[index];
+        const selected = question.answers[answer.answerIndex];
 
-        const selected = q.answers[answer.answerIndex];
-
-        answerHtml += `
-
-            <div class="answer-card">
-
+        html += `
+            <div class="answer-item">
                 <div class="question">
-
-                    ${index + 1}. ${q.question}
-
+                    ${index + 1}. ${question.question}
                 </div>
 
-                <div class="selected">
-
-                    ✔ ${selected ? selected.text : "선택 안함"}
-
+                <div class="selected-answer">
+                    ✔ ${selected.text}
                 </div>
 
                 <div class="score">
-
-                    ${answer.score}점
-
+                    점수 : ${answer.score}
                 </div>
-
             </div>
-
         `;
 
     });
 
-    detail.innerHTML = `
+    detail.innerHTML=`
 
-        <div class="profile">
+        <img src="${user.photo}">
 
-            <img src="${photo}" class="profile-image">
+        <h2>${user.name}</h2>
 
-            <div class="profile-info">
+        <p><b>전화번호</b> ${user.phone}</p>
 
-                <h2>${user.name}</h2>
+        <p><b>생년월일</b> ${user.birth}</p>
 
-                <div>📞 ${user.phone}</div>
+        <p><b>지역</b> ${user.region}</p>
 
-                <div>🎂 ${user.birth}</div>
+        <p><b>점수</b> ${user.percent}점</p>
 
-                <div>📍 ${user.region}</div>
+        <hr><br>
 
-                <div class="percent">
+        <h3>선택한 답변</h3>
 
-                    ${user.percent}점
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <hr>
-
-        <div class="answer-title">
-
-            선택한 답변 (${answers.length}개)
-
-        </div>
-
-        <div class="answer-list">
-
-            ${answerHtml}
-
-        </div>
+        ${html}
 
     `;
 
 }
-
-document.getElementById("resetBtn").onclick = async function () {
-
-    const ok = confirm(
-        "정말 참가자 기록을 모두 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다."
-    );
-
-    if (!ok) return;
-
-    try {
-
-        const res = await fetch("/api/participants/reset", {
-            method: "POST"
-        });
-
-        const data = await res.json();
-
-        if (data.success) {
-
-            alert("참가자 기록이 모두 삭제되었습니다.");
-
-            location.reload();
-
-        } else {
-
-            alert("삭제에 실패했습니다.");
-
-        }
-
-    } catch (e) {
-
-        console.error(e);
-        alert("삭제 중 오류가 발생했습니다.");
-
-    }
-
-};
