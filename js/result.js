@@ -104,10 +104,6 @@ document.getElementById("restartBtn").onclick=function(){
 
 };
 
-const rankingBtn = document.getElementById("rankingBtn");
-
-rankingBtn.disabled = true;
-
 document.getElementById("shareBtn").onclick=function(){
 
     if(navigator.share){
