@@ -1,5 +1,21 @@
 let phoneVerified = false;
 
+document.getElementById("birth").addEventListener("input",function(){
+
+    let value=this.value.replace(/\D/g,"");
+
+    if(value.length>8) value=value.slice(0,8);
+
+    if(value.length>=5){
+
+        value=value.replace(/(\d{4})(\d{0,2})(\d{0,2})/,"$1-$2-$3");
+
+    }
+
+    this.value=value;
+
+});
+
 // 전화번호 자동 하이픈
 document.getElementById("phone").addEventListener("input", function () {
 

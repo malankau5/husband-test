@@ -16,35 +16,64 @@
 
 <div class="container">
 
-    <img id="resultPhoto" class="result-photo">
+    <h1 class="main-title">
+    테스트 결과
+</h1>
 
-    <h2 id="userName"></h2>
+<p class="sub-title">
+    당신의 적합도입니다.
+</p>
 
-    <h1>유예정 적합도</h1>
+<div class="result-card">
 
-    <h2 id="percent"></h2>
+    <img
+        id="resultPhoto"
+        class="result-photo"
+    >
 
-    <h2 id="resultTitle"></h2>
+    <div id="percent" class="result-score">
+    </div>
 
-    <p id="resultDescription"></p>
+    <div id="userName" class="result-name">
+    </div>
 
-    <h2 id="myRank"></h2>
+    <div id="resultTitle"
+         class="result-title">
+    </div>
 
-    <br>
+    <p id="resultDescription"
+       class="result-desc">
+    </p>
 
-    <button id="shareBtn">
-        결과 공유
-    </button>
-
-    <button id="restartBtn">
-        다시 테스트
-    </button>
-
-    <button id="rankingBtn">
-        랭킹 보기
-    </button>
+    <div id="myRank"
+         class="result-rank">
+    </div>
 
 </div>
+
+<button
+    id="rankingBtn"
+    class="main-btn">
+
+    랭킹 보기
+
+</button>
+
+<button
+    id="restartBtn"
+    class="sub-btn">
+
+    다시 테스트
+
+</button>
+
+<button
+    id="shareBtn"
+    class="sub-btn">
+
+    결과 공유
+
+</button>
 
 <script src="js/questions.js"></script>
 <script src="js/result.js"></script>

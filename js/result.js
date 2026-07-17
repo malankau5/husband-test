@@ -3,8 +3,7 @@ const totalScore = Number(localStorage.getItem("totalScore")) || 0;
 const percent =
 Math.round(totalScore / questions.length);
 
-document.getElementById("percent").textContent =
-percent + "%";
+document.getElementById("percent").innerHTML = `${percent}<span style="font-size:26px;">점</span>`;
 
 document.getElementById("userName").textContent =
 localStorage.getItem("name") + "님";

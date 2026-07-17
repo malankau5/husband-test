@@ -76,83 +76,79 @@
 
     </div>
 
-    <!-- 인증번호 -->
+<!-- 인증번호 -->
 
-    <label class="input-title">인증번호</label>
+<label class="input-title">
 
-    <div class="input-row">
+    인증번호
 
-        <input
-            type="text"
-            id="code"
-            placeholder="인증번호"
-        >
+</label>
 
-        <button
-            id="checkCode"
-            class="side-btn"
-        >
-            확인
-        </button>
+<div class="input-row">
 
-    </div>
-
-    <!-- 생년월일 -->
-
-    <label class="input-title">생년월일</label>
-
-    <div class="birth-row">
-
-        <input
-            type="number"
-            id="birthYear"
-            placeholder="YYYY"
-        >
-
-        <input
-            type="number"
-            id="birthMonth"
-            placeholder="MM"
-        >
-
-        <input
-            type="number"
-            id="birthDay"
-            placeholder="DD"
-        >
-
-    </div>
-
-    <!-- 지역 -->
-
-    <label class="input-title">지역</label>
-
-    <select id="region">
-
-        <option>서울</option>
-        <option>경기</option>
-        <option>인천</option>
-        <option>강원</option>
-        <option>충북</option>
-        <option>충남</option>
-        <option>전북</option>
-        <option>전남</option>
-        <option>경북</option>
-        <option>경남</option>
-        <option>제주</option>
-
-    </select>
+    <input
+        type="text"
+        id="code"
+        placeholder="인증번호를 입력해주세요."
+    >
 
     <button
-        id="next"
-        class="main-btn"
+        id="checkCode"
+        class="side-btn"
     >
-        다음
+
+        확인
+
     </button>
 
 </div>
 
-<script src="js/info.js"></script>
+<!-- 생년월일 -->
 
-</body>
-</html>
+<label class="input-title">
+
+    생년월일
+
+</label>
+
+<input
+    type="text"
+    id="birth"
+    maxlength="10"
+    placeholder="2004-08-17"
+>
+
+<!-- 지역 -->
+
+<label class="input-title">
+
+    지역
+
+</label>
+
+<select id="region">
+
+    <option value="">지역을 선택해주세요.</option>
+
+    <option>서울</option>
+    <option>경기</option>
+    <option>인천</option>
+    <option>강원</option>
+    <option>충북</option>
+    <option>충남</option>
+    <option>전북</option>
+    <option>전남</option>
+    <option>경북</option>
+    <option>경남</option>
+    <option>제주</option>
+
+</select>
+
+<button
+    id="next"
+    class="main-btn"
+>
+
+    테스트 시작하기
+
+</button>
