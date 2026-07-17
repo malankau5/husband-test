@@ -143,20 +143,6 @@ body{
 
 /* ========================================================== */
 
-.hero-heart{
-
-    font-size:90px;
-
-    text-align:center;
-
-    margin:40px 0;
-
-    animation:heart 1.6s infinite;
-
-    user-select:none;
-
-}
-
 .guide-text{
 
     text-align:center;
@@ -393,28 +379,6 @@ select:focus{
 
         transform:
         translateY(0);
-
-    }
-
-}
-
-@keyframes heart{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.12);
-
-    }
-
-    100%{
-
-        transform:scale(1);
 
     }
 
@@ -1281,12 +1245,6 @@ select:focus-visible{
 
 }
 
-.hero-heart{
-
-    font-size:70px;
-
-}
-
 .photo-circle{
 
     width:140px;
@@ -1775,38 +1733,6 @@ select:focus{
    Floating
 ========================= */
 
-.hero-heart{
-
-    animation:
-
-    heart 1.5s infinite,
-
-    floating 3s ease-in-out infinite;
-
-}
-
-@keyframes floating{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-10px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
 /* =========================
    Fade
 ========================= */
@@ -2093,5 +2019,56 @@ select:hover{
 .side-btn{
 
     font-family:'Pretendard',sans-serif;
+
+}
+
+/* ==========================
+   메인 프로필
+========================== */
+
+.main-profile{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    display:block;
+
+    margin:0 auto 35px;
+
+    border-radius:50%;
+
+    border:7px solid white;
+
+    box-shadow:
+    0 20px 45px rgba(255,45,122,.18);
+
+    animation:profileAppear .8s ease;
+
+}
+
+@keyframes profileAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(-25px)
+        scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
 
 }
