@@ -28,6 +28,8 @@ body{
 
 .detail-panel{
 
+    position:relative;
+
     background:#fff;
 
     border-radius:25px;
@@ -39,6 +41,8 @@ body{
     display:flex;
 
     flex-direction:column;
+
+    overflow:hidden;
 
     box-shadow:0 15px 40px rgba(0,0,0,.08);
 
@@ -431,9 +435,41 @@ body{
 }
 
 .danger-btn{
+
+    position:absolute;
+
+    left:30px;
+
+    bottom:30px;
+
+    width:180px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
     background:#e53935;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-shadow:0 8px 20px rgba(229,57,53,.25);
+
 }
 
 .danger-btn:hover{
+
     background:#c62828;
+
+    transform:translateY(-2px);
+
 }
