@@ -657,13 +657,15 @@ select:focus{
 
 #answers button:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 
-    border-color:var(--primary);
+    border-color:#ff2d7a;
 
-    color:var(--primary);
+    background:#fff;
 
-    box-shadow:0 15px 30px rgba(255,45,122,.15);
+    color:#ff2d7a;
+
+    box-shadow:5px 5px 10px rgba(0,0,0,.12);
 
 }
 
