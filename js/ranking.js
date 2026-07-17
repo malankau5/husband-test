@@ -24,25 +24,37 @@ fetch("/api/participants")
 
         }
 
+        const photo = user.photo
+            ? user.photo
+            : "https://placehold.co/80x80?text=USER";
+
         rankingList.innerHTML += `
 
         <div class="ranking-card">
 
-            <h2>${medal}</h2>
+            <div class="rank-left">
 
-            ${
-                user.photo
-                ? `<img src="${user.photo}" class="result-photo">`
-                : ""
-            }
+                <div class="rank-medal">
+                    ${medal}
+                </div>
 
-            <h3>${user.name}</h3>
+                <img src="${photo}" class="rank-photo">
 
-            <h2>${user.percent}%</h2>
+            </div>
+
+            <div class="rank-center">
+
+                <div class="rank-name">
+                    ${user.name}
+                </div>
+
+                <div class="rank-score">
+                    ${user.percent}점
+                </div>
+
+            </div>
 
         </div>
-
-        <br>
 
         `;
 

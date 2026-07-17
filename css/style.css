@@ -965,6 +965,33 @@ select:focus{
 
 }
 
+/* 랭킹 전체 */
+.ranking-container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+/* 스크롤 영역 */
+.ranking-list{
+    background:#fff;
+    border-radius:25px;
+    padding:20px;
+    height:70vh;
+    overflow-y:auto;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+/* 스크롤바 */
+.ranking-list::-webkit-scrollbar{
+    width:10px;
+}
+
+.ranking-list::-webkit-scrollbar-thumb{
+    background:#ff2d7a;
+    border-radius:20px;
+}
+
 /* ========================= */
 
 #backBtn{
@@ -2096,5 +2123,138 @@ select:hover{
     line-height:1.45;
 
     white-space:pre-line;
+
+}
+
+/* ===========================
+   랭킹
+=========================== */
+
+.ranking-container{
+
+    width:90%;
+    max-width:900px;
+
+    margin:40px auto;
+
+}
+
+.ranking-list{
+
+    margin-top:30px;
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:20px;
+
+    height:65vh;
+
+    overflow-y:auto;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.ranking-list::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.ranking-list::-webkit-scrollbar-thumb{
+
+    background:#ff2d7a;
+
+    border-radius:20px;
+
+}
+
+.ranking-card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:18px;
+
+    border:2px solid #eee;
+
+    border-radius:18px;
+
+    margin-bottom:15px;
+
+    transition:.25s;
+
+}
+
+.ranking-card:hover{
+
+    border-color:#ff2d7a;
+
+    background:#fff5f9;
+
+}
+
+.rank-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.rank-medal{
+
+    font-size:34px;
+
+    width:55px;
+
+    text-align:center;
+
+}
+
+.rank-photo{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.rank-center{
+
+    flex:1;
+
+}
+
+.rank-name{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.rank-score{
+
+    color:#ff2d7a;
+
+    font-size:22px;
+
+    font-weight:700;
 
 }
