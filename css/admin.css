@@ -120,10 +120,11 @@ body{
 
     flex:1;
 
+    min-height:0;
+
     overflow-y:auto;
-
+    
     padding-right:10px;
-
 }
 
 .answer-list::-webkit-scrollbar{
@@ -410,4 +411,21 @@ body{
 
 }
 
+}
+
+.detail-panel{
+    background:#fff;
+    border-radius:25px;
+    padding:35px;
+    height:92vh;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;   /* 추가 */
+}
+
+#detail{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    min-height:0;
 }
