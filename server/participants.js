@@ -223,3 +223,34 @@ router.post("/reset", (req, res) => {
 });
 
 module.exports = router;
+
+router.delete("/:id", (req, res) => {
+
+    db.query(
+        "DELETE FROM participants WHERE id = ?",
+        [req.params.id],
+        (err, result) => {
+
+            if (err) {
+                console.error(err);
+
+                return res.status(500).json({
+                    success: false
+                });
+            }
+
+            if (result.affectedRows === 0) {
+                return res.status(404).json({
+                    success: false,
+                    message: "참가자를 찾을 수 없습니다."
+                });
+            }
+
+            res.json({
+                success: true
+            });
+
+        }
+    );
+
+});
