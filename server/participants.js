@@ -51,7 +51,7 @@ router.post("/", (req, res) => {
     } = req.body;
 
     const sql = `
-        IINSERT INTO participants
+        INSERT INTO participants
         (name, phone, birth, region, photo, percent, answers)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `;

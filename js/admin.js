@@ -43,19 +43,25 @@ function showUser(user){
 
     answers.forEach((answer,index)=>{
 
-        html+=`
+    if(answer==null) return;
 
-        <div class="answer">
+    html+=`
 
-            <b>${index+1}번</b><br>
+    <div class="answer">
 
-            ${questions[index].answers[answer].text}
-
+        <div class="question-title">
+            ${questions[index].question}
         </div>
 
-        `;
+        <div class="question-answer">
+            ✔ ${questions[index].answers[answer.answerIndex].text}
+        </div>
 
-    });
+    </div>
+
+    `;
+
+});
 
     detail.innerHTML=`
 
