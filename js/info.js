@@ -106,27 +106,24 @@ document.getElementById("next").onclick = function () {
 
     const photo = document.getElementById("photo").files[0];
 
-    if (photo) {
+    if (!photo) {
 
-        const reader = new FileReader();
+        alert("프로필 사진을 등록해주세요.");
+        return;
 
-        reader.onload = function (e) {
+    }
 
-            localStorage.setItem("photo", e.target.result);
+    const reader = new FileReader();
 
-            location.href = "question.html";
+    reader.onload = function (e) {
 
-        };
-
-        reader.readAsDataURL(photo);
-
-    } else {
-
-        localStorage.removeItem("photo");
+        localStorage.setItem("photo", e.target.result);
 
         location.href = "question.html";
 
-    }
+    };
+
+    reader.readAsDataURL(photo);
 
 };
 
