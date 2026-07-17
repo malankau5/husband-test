@@ -429,3 +429,11 @@ body{
     flex:1;
     min-height:0;
 }
+
+.danger-btn{
+    background:#e53935;
+}
+
+.danger-btn:hover{
+    background:#c62828;
+}

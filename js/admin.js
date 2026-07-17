@@ -187,3 +187,40 @@ function showUser(user) {
     `;
 
 }
+
+document.getElementById("resetBtn").onclick = async function () {
+
+    const ok = confirm(
+        "정말 참가자 기록을 모두 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다."
+    );
+
+    if (!ok) return;
+
+    try {
+
+        const res = await fetch("/api/participants/reset", {
+            method: "POST"
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+
+            alert("참가자 기록이 모두 삭제되었습니다.");
+
+            location.reload();
+
+        } else {
+
+            alert("삭제에 실패했습니다.");
+
+        }
+
+    } catch (e) {
+
+        console.error(e);
+        alert("삭제 중 오류가 발생했습니다.");
+
+    }
+
+};
