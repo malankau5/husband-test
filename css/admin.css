@@ -205,3 +205,33 @@ body{
 #deleteBtn:hover{
     background:#d9363e;
 }
+
+.user-card{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.delete-user{
+
+    margin-left:auto;
+
+    width:38px;
+    height:38px;
+
+    border:none;
+    background:transparent;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.delete-user:hover{
+
+    transform:scale(1.2);
+
+}

@@ -23,7 +23,7 @@ function renderUsers(list){
         card.innerHTML=`
             <img src="${user.photo}" class="user-photo">
 
-            <div>
+            <div style="flex:1;">
                 <div style="font-weight:700;font-size:17px;">
                     ${user.name}
                 </div>
@@ -32,6 +32,10 @@ function renderUsers(list){
                     ${user.percent}점
                 </div>
             </div>
+
+            <button class="delete-user" data-id="${user.id}" data-name="${user.name}">
+                💔
+            </button>
         `;
 
         card.onclick=()=>{
@@ -42,6 +46,42 @@ function renderUsers(list){
             card.classList.add("active");
 
             showUser(user);
+
+        };
+
+        const deleteBtn = card.querySelector(".delete-user");
+
+        deleteBtn.onclick = async (e) => {
+
+            e.stopPropagation();
+
+            if(!confirm(`${user.name} 참가자를 삭제하시겠습니까?`)){
+                return;
+            }
+
+            const res = await fetch(`/api/participants/${user.id}`,{
+                method:"DELETE"
+            });
+
+            const result = await res.json();
+
+            if(result.success){
+
+                users = users.filter(u => u.id !== user.id);
+
+                renderUsers(users);
+
+                detail.innerHTML=`
+                    <div class="empty">
+                        <h2>참가자를 선택하세요</h2>
+                    </div>
+                `;
+
+            }else{
+
+                alert("삭제 실패");
+
+            }
 
         };
 
@@ -140,36 +180,6 @@ function showUser(user){
         </div>
 
     `;
-
-deleteBtn.style.display = "inline-block";
-
-deleteBtn.onclick = async () => {
-
-    if (!confirm(`${user.name}님을 삭제하시겠습니까?`)) {
-        return;
-    }
-
-    try {
-
-        const res = await fetch(`/api/participants/${user.id}`, {
-            method: "DELETE"
-        });
-
-        const result = await res.json();
-
-        if (result.success) {
-            alert("삭제되었습니다.");
-            location.reload();
-        } else {
-            alert("삭제에 실패했습니다.");
-        }
-
-    } catch (err) {
-        console.error(err);
-        alert("오류가 발생했습니다.");
-    }
-
-};
 
 }
 
