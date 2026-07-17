@@ -203,4 +203,24 @@ router.get("/admin", (req, res) => {
 
 });
 
+router.post("/reset", (req, res) => {
+
+    db.query("TRUNCATE TABLE participants", (err) => {
+
+        if (err) {
+            console.error(err);
+            return res.status(500).json({
+                success: false
+            });
+        }
+
+        res.json({
+            success: true,
+            message: "참가자 기록이 모두 삭제되었습니다."
+        });
+
+    });
+
+});
+
 module.exports = router;

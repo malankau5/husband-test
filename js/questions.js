@@ -40,8 +40,8 @@ const questions = [
 
     answers: [
         { text: "80kg 이상", score: 0 },
-        { text: "79~73kg", score: 67 },
-        { text: "72~66kg", score: 33 },
+        { text: "79~73kg", score: 100 },
+        { text: "72~66kg", score: 67 },
         { text: "65kg 이하", score: 33 }
     ]
 },
@@ -856,8 +856,7 @@ const questions = [
 
     question: "50. 당신은 분리배출을 잘 합니까? (검색 금지)",
 
-    description: "문제 : 휴지 덩어리, 작은 플라스틱, 계란 껍데기, 바나나껍질, 종이는 일반 쓰레기이고\n\
-     작은 생선 뼈, 요거트, 냉동과일, 파인애플, 상한 고기는 음식물 쓰레기이다. ",
+    description: "문제 : 휴지 덩어리, 작은 플라스틱, 계란 껍데기, 바나나껍질, 종이는 일반 쓰레기이고, 작은 생선 뼈, 요거트, 냉동과일, 파인애플, 상한 고기는 음식물 쓰레기이다. ",
 
     image: "",
 
