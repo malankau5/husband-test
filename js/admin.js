@@ -27,9 +27,10 @@ fetch("/api/participants/admin")
                 </div>
             `;
 
-            card.onclick = () => showUser(user);
-
-            userList.appendChild(card);
+        card.onclick = () => {
+            console.log(user);
+            showUser(user);
+        };
 
         });
 
@@ -43,9 +44,10 @@ fetch("/api/participants/admin")
         detail.innerHTML = `<h2>데이터를 불러오지 못했습니다.</h2>`;
     });
 
-function showUser(user) {
+function showUser(user){
 
-    // 이미 배열로 오므로 JSON.parse 하지 않는다.
+    console.log("클릭됨", user);
+
     const answers = user.answers || [];
 
     const photo = user.photo && user.photo !== "null"
@@ -63,15 +65,13 @@ function showUser(user) {
 
         const selected = question.answers[answer.answerIndex];
 
-        html += `
-            <div class="answer">
-                <b>${question.question}</b><br>
-                <span style="color:#ff2d7a;">
-                    ✔ ${selected ? selected.text : "선택 안함"}
-                </span><br>
-                <small>점수 : ${answer.score}</small>
-            </div>
-        `;
+    html += `
+    <div class="answer">
+        <b>${question.question}</b><br>
+        ✔ ${selected ? selected.text : "선택 안함"}<br>
+        점수 : ${answer.score}
+    </div>
+    `;
     });
 
     detail.innerHTML = `
