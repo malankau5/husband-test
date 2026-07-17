@@ -9,15 +9,9 @@ const answers = document.getElementById("answers");
 const prevBtn = document.getElementById("prevBtn");
 const questionImage = document.getElementById("questionImage");
 
-// 범위 초과 시 초기화
+// 범위 초과 시 결과 페이지로 이동
 if (currentQuestion >= questions.length) {
-    currentQuestion = 0;
-    totalScore = 0;
-    userAnswers = [];
-
-    localStorage.setItem("currentQuestion", 0);
-    localStorage.setItem("totalScore", 0);
-    localStorage.setItem("userAnswers", JSON.stringify([]));
+    location.href = "result.html";
 }
 
 renderQuestion();
@@ -111,20 +105,19 @@ function renderQuestion() {
 
 }
 
-// 다음 문제
 function nextQuestion(answerIndex) {
 
     if (userAnswers[currentQuestion]) {
         totalScore -= userAnswers[currentQuestion].score;
     }
 
-    const score =
-        questions[currentQuestion].answers[answerIndex].score;
+    const score = questions[currentQuestion].answers[answerIndex].score;
 
     userAnswers[currentQuestion] = {
         answerIndex,
         score
     };
+
 
     totalScore += score;
 
