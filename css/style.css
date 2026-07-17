@@ -80,20 +80,19 @@ body{
 
 .container{
 
-    width:100%;
-    max-width:540px;
+    width:90%;
 
-    background:rgba(255,255,255,.92);
+    max-width:500px;
 
-    backdrop-filter:blur(15px);
+}
 
-    border-radius:32px;
+@media (min-width:768px){
 
-    padding:40px;
+    .container{
 
-    box-shadow:var(--shadow);
+        max-width:720px;
 
-    animation:fadeUp .5s ease;
+    }
 
 }
 
@@ -2075,20 +2074,20 @@ select:hover{
 
 #questionDescription{
 
-    max-width:500px;
+    width:fit-content;
 
-    margin:18px auto 35px;
+    margin:20px auto 30px;
 
-    text-align:center;
+    text-align:left;
 
     color:#444;
 
-    font-size:20px;
+    font-size:18px;
 
     font-weight:600;
 
-    line-height:2;
-
     white-space:pre-line;
+
+    line-height:1.5;
 
 }
