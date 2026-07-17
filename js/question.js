@@ -54,7 +54,7 @@ function renderQuestion() {
 
     answers.innerHTML = "";
 
-    if(q.answers.length >= 7){
+    if(q.twoColumn){
 
         answers.style.gridTemplateColumns = "1fr 1fr";
 
@@ -63,7 +63,7 @@ function renderQuestion() {
         answers.style.gridTemplateColumns = "1fr";
 
     }
-
+  
     q.answers.forEach((answer, index) => {
 
         const button = document.createElement("button");
