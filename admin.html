@@ -1,113 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자</title>
+    <title>관리자 페이지</title>
 
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-
-        .admin-container{
-        display:grid;
-        grid-template-columns:1fr 350px;
-        gap:30px;
-        }
-
-        .user-list{
-            background:#fff;
-            border-radius:20px;
-            padding:20px;
-            height:85vh;
-            overflow-y:auto;
-            display:flex;
-            flex-direction:column;
-            gap:10px;
-        }        
-
-        .user-card{
-            display:flex;
-            align-items:center;
-            gap:15px;
-            padding:12px;
-            border-radius:15px;
-            cursor:pointer;
-            transition:.2s;
-            margin-bottom:10px;
-        }
-
-        .user-card:hover{
-            background:#f5f5f5;
-        }
-
-        .user-photo{
-            width:65px;
-            height:65px;
-            border-radius:50%;
-            object-fit:cover;
-        }
-
-        .detail{
-            background:#fff;
-            border-radius:20px;
-            padding:30px;
-            height:85vh;
-            overflow:hidden;
-            display:flex;
-            flex-direction:column;
-        }
-
-        .detail img{
-            width:180px;
-            border-radius:20px;
-            margin-bottom:20px;
-        }
-
-        .answer{
-            padding:10px;
-            border-bottom:1px solid #eee;
-        }
-
-        .answer-list{
-            flex:1;
-            overflow-y:auto;
-            border:1px solid #eee;
-            border-radius:15px;
-            padding:15px;
-            margin-top:10px;
-        }
-
-        .answer{
-            padding:12px;
-            border-bottom:1px solid #eee;
-        }
-
-        .answer:last-child{
-            border-bottom:none;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
 
-<div class="admin-container">
+<div class="admin-wrap">
 
-    <div class="detail" id="detail">
-        <h2>참가자를 선택하세요.</h2>
-    </div>
+    <!-- 상세 -->
+    <section class="detail-panel">
 
-    <div class="user-list" id="userList"></div>
+        <div id="detail">
+
+            <div class="empty">
+                <h2>참가자를 선택하세요</h2>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- 참가자 -->
+    <aside class="user-panel">
+
+        <div class="user-header">
+
+            <h2>참가자</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="이름 검색">
+
+        </div>
+
+        <div
+            class="user-list"
+            id="userList">
+
+        </div>
+
+    </aside>
 
 </div>
-
 
 <script src="js/questions.js"></script>
 <script src="js/admin.js"></script>
 
 </body>
 </html>
-

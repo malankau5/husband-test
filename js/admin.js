@@ -1,38 +1,18 @@
 const userList = document.getElementById("userList");
 const detail = document.getElementById("detail");
+const searchInput = document.getElementById("searchInput");
 
+let users = [];
+let selectedId = null;
+
+// 참가자 불러오기
 fetch("/api/participants/admin")
-    .then(res => {
-        if (!res.ok) throw new Error("데이터를 불러오지 못했습니다.");
-        return res.json();
-    })
-    .then(users => {
+    .then(res => res.json())
+    .then(data => {
 
-        userList.innerHTML = "";
+        users = data;
 
-        users.forEach(user => {
-
-            const card = document.createElement("div");
-            card.className = "user-card";
-
-            const photo = user.photo && user.photo !== "null"
-                ? user.photo
-                : "https://placehold.co/100x100?text=No+Photo";
-
-            card.innerHTML = `
-                <img src="${photo}" class="user-photo">
-                <div>
-                    <b>${user.name}</b><br>
-                    ${user.percent}점
-                </div>
-            `;
-
-        card.onclick = () => {
-            console.log(user);
-            showUser(user);
-        };
-
-        });
+        renderUserList(users);
 
         if (users.length > 0) {
             showUser(users[0]);
@@ -41,55 +21,169 @@ fetch("/api/participants/admin")
     })
     .catch(err => {
         console.error(err);
-        detail.innerHTML = `<h2>데이터를 불러오지 못했습니다.</h2>`;
+        detail.innerHTML = "<h2>참가자 정보를 불러오지 못했습니다.</h2>";
     });
 
-function showUser(user){
+// 검색
+searchInput.addEventListener("input", () => {
 
-    console.log("클릭됨", user);
+    const keyword = searchInput.value.trim().toLowerCase();
+
+    const filtered = users.filter(user =>
+        user.name.toLowerCase().includes(keyword)
+    );
+
+    renderUserList(filtered);
+
+});
+
+// 참가자 목록 출력
+function renderUserList(list) {
+
+    userList.innerHTML = "";
+
+    if (list.length === 0) {
+
+        userList.innerHTML = `
+            <div class="empty-user">
+                검색 결과가 없습니다.
+            </div>
+        `;
+
+        return;
+    }
+
+    list.forEach(user => {
+
+        const card = document.createElement("div");
+
+        card.className = "user-card";
+
+        if (selectedId === user.id) {
+            card.classList.add("active");
+        }
+
+        const photo = user.photo
+            ? user.photo
+            : "https://placehold.co/80x80?text=USER";
+
+        card.innerHTML = `
+            <img src="${photo}" class="user-photo">
+
+            <div class="user-info">
+
+                <div class="user-name">${user.name}</div>
+
+                <div class="user-score">
+                    ${user.percent}점
+                </div>
+
+            </div>
+        `;
+
+        card.onclick = () => {
+
+            selectedId = user.id;
+
+            renderUserList(list);
+
+            showUser(user);
+
+        };
+
+        userList.appendChild(card);
+
+    });
+
+}
+
+// 상세보기
+function showUser(user) {
 
     const answers = user.answers || [];
 
-    const photo = user.photo && user.photo !== "null"
+    const photo = user.photo
         ? user.photo
-        : "https://placehold.co/250x250?text=No+Photo";
+        : "https://placehold.co/250x250?text=USER";
 
-    let html = "";
+    let answerHtml = "";
 
     answers.forEach((answer, index) => {
 
-        const question = questions[index];
+        const q = questions[index];
 
-        if (!question) return;
-        if (!answer) return;
+        if (!q) return;
 
-        const selected = question.answers[answer.answerIndex];
+        const selected = q.answers[answer.answerIndex];
 
-    html += `
-    <div class="answer">
-        <b>${question.question}</b><br>
-        ✔ ${selected ? selected.text : "선택 안함"}<br>
-        점수 : ${answer.score}
-    </div>
-    `;
+        answerHtml += `
+
+            <div class="answer-card">
+
+                <div class="question">
+
+                    ${index + 1}. ${q.question}
+
+                </div>
+
+                <div class="selected">
+
+                    ✔ ${selected ? selected.text : "선택 안함"}
+
+                </div>
+
+                <div class="score">
+
+                    ${answer.score}점
+
+                </div>
+
+            </div>
+
+        `;
+
     });
 
     detail.innerHTML = `
-        <img src="${photo}">
 
-        <h2>${user.name}</h2>
+        <div class="profile">
 
-        <p><b>전화번호</b> ${user.phone}</p>
-        <p><b>생년월일</b> ${user.birth}</p>
-        <p><b>지역</b> ${user.region}</p>
-        <p><b>점수</b> ${user.percent}점</p>
+            <img src="${photo}" class="profile-image">
+
+            <div class="profile-info">
+
+                <h2>${user.name}</h2>
+
+                <div>📞 ${user.phone}</div>
+
+                <div>🎂 ${user.birth}</div>
+
+                <div>📍 ${user.region}</div>
+
+                <div class="percent">
+
+                    ${user.percent}점
+
+                </div>
+
+            </div>
+
+        </div>
 
         <hr>
 
-        <h3>선택한 답변 (${answers.length}개)</h3>
+        <div class="answer-title">
+
+            선택한 답변 (${answers.length}개)
+
+        </div>
 
         <div class="answer-list">
-            ${html}
+
+            ${answerHtml}
+
         </div>
+
     `;
+
 }
