@@ -203,6 +203,30 @@ router.get("/admin", (req, res) => {
 
 });
 
+router.delete("/:id", (req, res) => {
+
+    db.query(
+        "DELETE FROM participants WHERE id = ?",
+        [req.params.id],
+        (err, result) => {
+
+            if (err) {
+                console.error(err);
+
+                return res.status(500).json({
+                    success: false
+                });
+            }
+
+            res.json({
+                success: true
+            });
+
+        }
+    );
+
+});
+
 router.post("/reset", (req, res) => {
 
     db.query("TRUNCATE TABLE participants", (err) => {

@@ -53,6 +53,8 @@ function renderUsers(list){
 
 function showUser(user){
 
+    const deleteBtn = document.getElementById("deleteBtn");
+
     const answers = Array.isArray(user.answers)
     ? user.answers
     : JSON.parse(user.answers || "[]");
@@ -138,6 +140,38 @@ function showUser(user){
         </div>
 
     `;
+
+    const deleteBtn = document.getElementById("deleteBtn");
+
+deleteBtn.style.display = "inline-block";
+
+deleteBtn.onclick = async () => {
+
+    if (!confirm(`${user.name}님을 삭제하시겠습니까?`)) {
+        return;
+    }
+
+    try {
+
+        const res = await fetch(`/api/participants/${user.id}`, {
+            method: "DELETE"
+        });
+
+        const result = await res.json();
+
+        if (result.success) {
+            alert("삭제되었습니다.");
+            location.reload();
+        } else {
+            alert("삭제에 실패했습니다.");
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("오류가 발생했습니다.");
+    }
+
+};
 
 }
 
