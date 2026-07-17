@@ -88,6 +88,8 @@ function showUser(user){
 
         <h3>선택한 답변 (${answers.length}개)</h3>
 
-        ${html}
+        <div class="answer-list">
+            ${html}
+        </div>
     `;
 }

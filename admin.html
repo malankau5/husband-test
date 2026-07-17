@@ -23,8 +23,8 @@
             background:#fff;
             border-radius:20px;
             padding:20px;
+            height:85vh;
             overflow-y:auto;
-            max-height:85vh;
         }
 
         .user-card{
@@ -53,6 +53,10 @@
             background:#fff;
             border-radius:20px;
             padding:30px;
+            height:85vh;
+            overflow:hidden;
+            display:flex;
+            flex-direction:column;
         }
 
         .detail img{
@@ -64,6 +68,24 @@
         .answer{
             padding:10px;
             border-bottom:1px solid #eee;
+        }
+
+        .answer-list{
+            flex:1;
+            overflow-y:auto;
+            border:1px solid #eee;
+            border-radius:15px;
+            padding:15px;
+            margin-top:10px;
+        }
+
+        .answer{
+            padding:12px;
+            border-bottom:1px solid #eee;
+        }
+
+        .answer:last-child{
+            border-bottom:none;
         }
 
     </style>
@@ -84,8 +106,10 @@
 
 </div>
 
+
 <script src="js/questions.js"></script>
 <script src="js/admin.js"></script>
 
 </body>
 </html>
+
