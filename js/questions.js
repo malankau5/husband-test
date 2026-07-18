@@ -1215,8 +1215,8 @@ const questions = [
     image: "",
 
     answers: [
-        { text: "있다", score: 100 },
-        { text: "없다", score: 50 },
+        { text: "있다", score: 50 },
+        { text: "없다", score: 100 },
         { text: "많다", score: 0 }
     ]
 },
